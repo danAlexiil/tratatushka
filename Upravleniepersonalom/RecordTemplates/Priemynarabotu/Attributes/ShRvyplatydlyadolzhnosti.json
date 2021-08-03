@@ -1,0 +1,31 @@
+{
+  "$type": "Comindware.Platform.Contracts.AttributeModel, Comindware.Platform.Contracts",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Attribute",
+    "Owner": "Priemynarabotu",
+    "Alias": "ShRvyplatydlyadolzhnosti"
+  },
+  "Type": "Instance",
+  "Format": "Undefined",
+  "Name": "ШР - выплаты для должности",
+  "Description": "Коллекция ссылок по выплатам для должности в штатном расписании (нужно будет для дальнейшего)",
+  "IsSystem": false,
+  "IsDisabled": false,
+  "IsUnique": false,
+  "IsIndexed": false,
+  "IsTracked": false,
+  "IsMultiValue": true,
+  "IsTitle": false,
+  "IsMandatory": false,
+  "IsOwnership": false,
+  "IsCalculated": false,
+  "InstanceGlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Attribute",
+    "Owner": "ShtatnoeraspisanieNadbavki",
+    "Alias": "Vyplatydlyadozhnosti"
+  },
+  "ImageColorType": "Original",
+  "ImagePreserveAspectRatio": false
+}

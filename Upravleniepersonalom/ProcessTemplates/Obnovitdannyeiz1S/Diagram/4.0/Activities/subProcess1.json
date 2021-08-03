@@ -1,0 +1,77 @@
+{
+  "$type": "Comindware.Platform.Contracts.SubProcessActivityModel, Comindware.Platform.Contracts",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Activity",
+    "Owner": "Obnovitdannyeiz1S",
+    "Alias": "subProcess1"
+  },
+  "ProcessTemplateAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "ProcessTemplate",
+    "Alias": "ImportSOAP"
+  },
+  "Loop": {
+    "$type": "Comindware.Platform.Contracts.LoopModel, Comindware.Platform.Contracts",
+    "Kind": "ForEach",
+    "LoopExecutionOrder": "Once",
+    "Expression": "$id",
+    "TargetTemplate": {
+      "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+      "Type": "Undefined"
+    }
+  },
+  "LoopAdapter": {
+    "$type": "Comindware.Platform.Contracts.SubProcessLoopAdapterModel, Comindware.Platform.Contracts"
+  },
+  "Definition": {
+    "$type": "Comindware.Platform.Contracts.SubProcessDefinitionModel, Comindware.Platform.Contracts",
+    "InputMapping": {
+      "$type": "Comindware.Platform.Contracts.MakeObjectRuleModel, Comindware.Platform.Contracts",
+      "RecordTemplate": {
+        "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+        "Type": "Undefined"
+      },
+      "Type": "MakeObject"
+    },
+    "ReturnMapping": {
+      "$type": "Comindware.Platform.Contracts.MakeObjectRuleModel, Comindware.Platform.Contracts",
+      "RecordTemplate": {
+        "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+        "Type": "Undefined"
+      },
+      "Type": "MakeObject"
+    },
+    "ProcessObjectStrategy": "Undefined",
+    "ProcessRelation": "Undefined"
+  },
+  "BehaviourState": "Undefined",
+  "AdvancedConfiguration": false,
+  "Title": "Импорт SOAP",
+  "IsTitleSet": false,
+  "Position": {
+    "$type": "Comindware.Platform.Contracts.VectorModel, Comindware.Platform.Contracts",
+    "X": 465.0,
+    "Y": 150.0
+  },
+  "Size": {
+    "$type": "Comindware.Platform.Contracts.DimensionsModel, Comindware.Platform.Contracts",
+    "Width": 150.0,
+    "Height": 100.0
+  },
+  "Owner": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Activity",
+    "Owner": "Obnovitdannyeiz1S",
+    "Alias": "pool1"
+  },
+  "OwnerEmbeddedProcessActivityAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Undefined"
+  },
+  "MountedOnAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Undefined"
+  },
+  "Type": "SubProcess"
+}

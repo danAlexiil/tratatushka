@@ -1,0 +1,30 @@
+{
+  "$type": "Comindware.Platform.Contracts.AttributeModel, Comindware.Platform.Contracts",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Attribute",
+    "Owner": "Priemynarabotu",
+    "Alias": "SsylkananadbavkiKandidatapodolzhnosti"
+  },
+  "Type": "Instance",
+  "Format": "Link",
+  "Name": "Ссылка на надбавки Кандидата по должности",
+  "IsSystem": false,
+  "IsDisabled": false,
+  "IsUnique": false,
+  "IsIndexed": false,
+  "IsTracked": false,
+  "IsMultiValue": true,
+  "IsTitle": false,
+  "IsMandatory": false,
+  "IsOwnership": false,
+  "IsCalculated": true,
+  "Expression": "from a in db->VyplatypodolzhnostiKandidatu where AND(NOTMATCHES(a->Tipvyplaty, \"Оклад|оклад\"), a->SsylkanapriemRef->id == $id) select a->id",
+  "InstanceGlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "RecordTemplate",
+    "Alias": "VyplatypodolzhnostiKandidatu"
+  },
+  "ImageColorType": "Original",
+  "ImagePreserveAspectRatio": false
+}

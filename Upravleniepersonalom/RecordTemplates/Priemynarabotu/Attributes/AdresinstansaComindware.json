@@ -1,0 +1,30 @@
+{
+  "$type": "Comindware.Platform.Contracts.AttributeModel, Comindware.Platform.Contracts",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Attribute",
+    "Owner": "Priemynarabotu",
+    "Alias": "AdresinstansaComindware"
+  },
+  "Type": "String",
+  "Format": "HtmlText",
+  "Name": "Адрес инстанса Comindware",
+  "Description": "В этот атрибут помещается вычисленная гиперссылка на тот инстанс Comindware, в котором запущен процесс",
+  "IsSystem": false,
+  "IsDisabled": false,
+  "IsUnique": false,
+  "IsIndexed": false,
+  "IsTracked": false,
+  "IsMultiValue": false,
+  "IsTitle": false,
+  "IsMandatory": false,
+  "IsOwnership": false,
+  "IsCalculated": true,
+  "Expression": "@prefix string: <http://www.w3.org/2000/10/swap/string#>.\n@prefix configuration: <http://comindware.com/ontology/configuration#>.\n\n{\n\n?configObject a configuration:Configuration.\n?configObject configuration:baseUri ?tempLink. \n(\"<a href='{0}'>{0}</a>\" ?tempLink) string:format ?value.\n}",
+  "InstanceGlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Undefined"
+  },
+  "ImageColorType": "Original",
+  "ImagePreserveAspectRatio": false
+}

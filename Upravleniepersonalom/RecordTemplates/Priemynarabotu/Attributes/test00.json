@@ -1,0 +1,30 @@
+{
+  "$type": "Comindware.Platform.Contracts.AttributeModel, Comindware.Platform.Contracts",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Attribute",
+    "Owner": "Priemynarabotu",
+    "Alias": "test00"
+  },
+  "Type": "Account",
+  "Format": "Undefined",
+  "Name": "тест",
+  "IsSystem": false,
+  "IsDisabled": false,
+  "IsUnique": false,
+  "IsIndexed": false,
+  "IsTracked": false,
+  "IsMultiValue": false,
+  "IsTitle": false,
+  "IsMandatory": false,
+  "IsOwnership": false,
+  "IsCalculated": true,
+  "Expression": "IF(\n    NOT(\n        EMPTY(\n            $PodrazdelenieRef->RoditelskoepodrazdelenieRef->Rukovoditel)),\n    $PodrazdelenieRef->RoditelskoepodrazdelenieRef->RukovoditelRef->id,\n    $PodrazdelenieRef->KuriruyuschiyprorektorRef->id)",
+  "InstanceGlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "RecordTemplate",
+    "Alias": "_Account"
+  },
+  "ImageColorType": "Original",
+  "ImagePreserveAspectRatio": false
+}

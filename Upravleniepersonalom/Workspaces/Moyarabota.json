@@ -1,0 +1,106 @@
+{
+  "$type": "Comindware.Platform.Contracts.RoleWorkspaceConfigurationModel, Comindware.Platform.Contracts",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "RoleWorkspace",
+    "Alias": "Moyarabota"
+  },
+  "Name": "Моя работа",
+  "Roles": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias[], Comindware.Platform.Contracts",
+    "$values": [
+      {
+        "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+        "Type": "RoleConfiguration",
+        "Alias": "Sotrudnik"
+      }
+    ]
+  },
+  "NavigationItems": {
+    "$type": "Comindware.Platform.Contracts.NavigationItemModel[], Comindware.Platform.Contracts",
+    "$values": [
+      {
+        "$type": "Comindware.Platform.Contracts.NavigationItemModel, Comindware.Platform.Contracts",
+        "Name": "Мои задачи",
+        "Priority": 10,
+        "ItemType": "MyTasks",
+        "IconClass": "tasks",
+        "Severity": "None"
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.NavigationItemModel, Comindware.Platform.Contracts",
+        "Name": "Разделитель",
+        "Priority": 9,
+        "ItemType": "Splitter",
+        "Severity": "None"
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.NavigationItemModel, Comindware.Platform.Contracts",
+        "Name": "Мой профиль",
+        "Container": "Sotrudniki9",
+        "Priority": 8,
+        "ItemType": "Action",
+        "IconClass": "file-user",
+        "Target": "Moyprofil",
+        "Severity": "None"
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.NavigationItemModel, Comindware.Platform.Contracts",
+        "Name": "Разделитель",
+        "Priority": 7,
+        "ItemType": "Splitter",
+        "Severity": "None"
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.NavigationItemModel, Comindware.Platform.Contracts",
+        "Name": "Физические лица",
+        "Description": "Вакансии",
+        "Priority": 6,
+        "ItemType": "RecordTemplate",
+        "IconClass": "user-plus",
+        "Target": "Kandidaty",
+        "Severity": "None"
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.NavigationItemModel, Comindware.Platform.Contracts",
+        "Name": "Разделитель",
+        "Priority": 5,
+        "ItemType": "Splitter",
+        "Severity": "None"
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.NavigationItemModel, Comindware.Platform.Contracts",
+        "Name": "Приемы на работу",
+        "Container": "Priemynarabotu",
+        "Priority": 4,
+        "ItemType": "RecordTemplateList",
+        "IconClass": "play-circle",
+        "Target": "defaultList",
+        "Severity": "None"
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.NavigationItemModel, Comindware.Platform.Contracts",
+        "Name": "Разделитель",
+        "Priority": 3,
+        "ItemType": "Splitter",
+        "Severity": "None"
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.NavigationItemModel, Comindware.Platform.Contracts",
+        "Name": "Подразделения",
+        "Priority": 2,
+        "ItemType": "RecordTemplate",
+        "IconClass": "building",
+        "Target": "Podrazdeleniya",
+        "Severity": "None"
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.NavigationItemModel, Comindware.Platform.Contracts",
+        "Name": "Разделитель",
+        "Priority": 1,
+        "ItemType": "Splitter",
+        "Severity": "None"
+      }
+    ]
+  }
+}

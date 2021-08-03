@@ -1,0 +1,58 @@
+{
+  "$type": "Comindware.Platform.Contracts.TaskActivityModel, Comindware.Platform.Contracts",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Activity",
+    "Owner": "ImportSOAP",
+    "Alias": "scriptTask2"
+  },
+  "Kind": "Script",
+  "ScriptDefinition": {
+    "$type": "Comindware.Platform.Contracts.ScriptTaskDefinitionModel, Comindware.Platform.Contracts",
+    "MaxExecutionTime": "03:00:00",
+    "AttemptCount": 1,
+    "AttemptInterval": "00:00:00",
+    "Script": {
+      "$type": "Comindware.Platform.Contracts.CustomRuleModel, Comindware.Platform.Contracts",
+      "Type": "Custom",
+      "Definition": {
+        "$type": "Comindware.Platform.Contracts.CSharpRuleDefinitionModel, Comindware.Platform.Contracts",
+        "Code": "using System;\nusing System.Collections.Generic;\nusing System.IO;\nusing System.Linq;\nusing System.Text;\nusing System.Xml;\nusing System.Xml.Linq;\nusing System.Xml.Serialization;\n\nusing Comindware.Data.Entity;\nusing Comindware.TeamNetwork.Api.Data.UserCommands;\nusing Comindware.TeamNetwork.Api.Data;\n\npublic class Script\n{\n\tprivate const string STAFF_UNIT_ENTITY = \"ShtatnoeRaspisanie\";\n\t\n\tprivate const string FLS_ENTITY = \"FLS\";\n    \n    private const string NAME = \"STAFFUNIT_FLS\";\n\n    public static void Main(Comindware.Process.Api.Data.ScriptContext context, Comindware.Entities entities)\n    {\n\t\tComindware.ImportSoapData inst = entities.ImportSoapData.First(item=>item.id == context.BusinessObjectId);\n        inst.DateTime = DateTime.Now;  \n        inst.ProcessId = context.ProcessId;\n\t\tinst.ServiceName = NAME;\n        inst.Success = true;\n        StringBuilder errorData = new StringBuilder();\n\t\ttry\n\t\t{\n\t\t\tstring staff_entity = STAFF_UNIT_ENTITY;\n\t\t\tstring fls_entity = FLS_ENTITY;\n\t\t\tvar staff_data = Api.TeamNetwork.ObjectService.ListWithAlias (staff_entity);\n\t\t\tvar fls_data = Api.TeamNetwork.ObjectService.ListWithAlias (fls_entity);\n\t\t\tvar fls_dict = new Dictionary<string, string>();\n\t\t\tforeach (var item in fls_data)\n\t\t\t{\n\t\t\t\tvar id_1c = item[\"Id1c\"].ToString();\n\t\t\t\tvar id = item[\"id\"].ToString();\n\t\t\t\tfls_dict.Add(id_1c, id);\n\t\t\t}\n\t\t\t\n\t\t\t\n\t\t\tforeach (var item in staff_data)\n\t\t\t{\n                if (!item.ContainsKey(\"FinancialAccountId\") || item[\"FinancialAccountId\"] == null)\n                {\n                    continue;\n                }\n\t\t\t\tvar fls_id_1c = item[\"FinancialAccountId\"].ToString();\n\t\t\t\tif (!fls_dict.ContainsKey(fls_id_1c))\n\t\t\t\t{\n\t\t\t\t\tinst.Success = false;\n\t\t\t\t\terrorData.AppendLine(\"no fls found for id: \" + fls_id_1c);\n\t\t\t\t}\n                else\n                {\n\t\t\t\t\tvar fls_id = fls_dict[fls_id_1c];\n\t\t\t\t\tvar id = item[\"id\"];\n\t\t\t\t\tvar upd_dict = new Dictionary<string, Object>();\n\t\t\t\t\tupd_dict.Add(\"FLS\", fls_id);\n\t\t\t\t\tApi.TeamNetwork.ObjectService.EditWithAlias(staff_entity, id.ToString(), upd_dict);\n                }\n\t\t\t}\n\t\t\tinst.ErrorMessage += inst.ErrorMessage + errorData.ToString();\n\t\t}\n\t\tcatch (Exception exc)\n\t\t{\n\t\t\tinst.Success = false;\n\t\t\tinst.ErrorMessage += inst.ErrorMessage + NAME + errorData.ToString() + exc.ToString();\n\t\t}\n\t\tentities.ImportSoapData.Edit(inst);\n    }\n\t\n\tprivate static SoapConfig LoadConfig(string link, string serviceName)\n    {\n        XmlSerializer formatter = new XmlSerializer(typeof(SoapConfig[]));\n        SoapConfig[] cfg;\n        using (FileStream fs = new FileStream(link, FileMode.Open))\n        {\n             cfg = (SoapConfig[])formatter.Deserialize(fs);\n        }\n        return cfg.FirstOrDefault(item => item.Name == serviceName);\n    }\n\t\n    [Serializable]\n\tpublic class SoapConfig\n\t{\n        [XmlAttribute]\n\t\tpublic string Name { get; set; }\n        [XmlAttribute]\n        public string SoapUrl { get; set; }\n\t\t[XmlAttribute]\n        public string SoapAction { get; set; }\n        [XmlElement]\n\t\tpublic string Login { get; set; }\n        [XmlElement]\n\t\tpublic string Password { get; set; }\n        [XmlAttribute]\n\t\tpublic string XmlNamespace { get; set; }\n        [XmlAttribute]\n\t\tpublic string ComindwareEntity { get; set; }\t\n\t\t[XmlAttribute]\n        public string SourceIpAddress { get; set; }\n\t\t\n\t\tpublic override string ToString()\n\t\t{\n\t\t\tStringBuilder sb = new StringBuilder();\n\t\t\tsb.AppendLine(string.Format(\"{0}.{1}\", \"Name\", Name));\n\t\t\tsb.AppendLine(string.Format(\"{0}.{1}\", \"SoapUrl\", SoapUrl));\n\t\t\tsb.AppendLine(string.Format(\"{0}.{1}\", \"SoapAction\", SoapAction));\n\t\t\tsb.AppendLine(string.Format(\"{0}.{1}\", \"XmlNamespace\", XmlNamespace));\n\t\t\tsb.AppendLine(string.Format(\"{0}.{1}\", \"ComindwareEntity\", ComindwareEntity));\n            sb.AppendLine(string.Format(\"{0}.{1}\", \"SourceIpAddress\", SourceIpAddress));\n\t\t\treturn sb.ToString();\n\t\t}\n\t}\n}",
+        "Type": "CSharpExpression"
+      }
+    }
+  },
+  "FormAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "ProcessForm",
+    "Owner": "ImportSOAP"
+  },
+  "BehaviourState": "Undefined",
+  "Title": " Связать расписание и ФЛС",
+  "IsTitleSet": false,
+  "Position": {
+    "$type": "Comindware.Platform.Contracts.VectorModel, Comindware.Platform.Contracts",
+    "X": 720.0,
+    "Y": 165.0
+  },
+  "Size": {
+    "$type": "Comindware.Platform.Contracts.DimensionsModel, Comindware.Platform.Contracts",
+    "Width": 120.0,
+    "Height": 70.0
+  },
+  "Owner": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Activity",
+    "Owner": "ImportSOAP",
+    "Alias": "pool1"
+  },
+  "OwnerEmbeddedProcessActivityAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Undefined"
+  },
+  "MountedOnAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Undefined"
+  },
+  "Type": "Task"
+}

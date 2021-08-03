@@ -1,0 +1,26 @@
+{
+  "$type": "Comindware.Platform.Contracts.UserCommandConfigurationModel, Comindware.Platform.Contracts",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "UserCommand",
+    "Owner": "Priemynarabotu",
+    "Alias": "t4_1"
+  },
+  "Name": "Карточка Т4 для заполнения",
+  "IsSystem": false,
+  "IsDisabled": false,
+  "IsPrepare": false,
+  "SkipValidation": true,
+  "Context": "Record",
+  "Multiplicity": "OneByOne",
+  "Kind": "ExportObject",
+  "ResultType": "File",
+  "RelatedEntityGlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "ExportTemplate",
+    "Owner": "Priemynarabotu",
+    "Alias": "t4_1"
+  },
+  "LockStateChangeType": "Undefined",
+  "LockStateVisibilityType": "Undefined"
+}

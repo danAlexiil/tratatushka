@@ -1,0 +1,57 @@
+{
+  "$type": "Comindware.Platform.Contracts.CommunicationRouteModel, Comindware.Platform.Contracts",
+  "Name": "Отправка сообщения",
+  "CommunicationChannelName": "SMTP",
+  "MessageType": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "MessageTemplate",
+    "Alias": "Otpravka_soobscheniya7e85"
+  },
+  "IsUsePersonalCommunicationChannel": false,
+  "PersonalChannelAccountProperty": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Undefined"
+  },
+  "Map": {
+    "$type": "Comindware.Platform.Contracts.ResultHandlingMapModel[], Comindware.Platform.Contracts",
+    "$values": [
+      {
+        "$type": "Comindware.Platform.Contracts.ResultHandlingMapModel, Comindware.Platform.Contracts",
+        "MessageTypeAlias": "{email}",
+        "ResponseKey": "ToAddress"
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.ResultHandlingMapModel, Comindware.Platform.Contracts",
+        "MessageTypeAlias": "attachments",
+        "ResponseKey": "Attachment"
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.ResultHandlingMapModel, Comindware.Platform.Contracts",
+        "MessageTypeAlias": "<p>{body}</p>\n",
+        "ResponseKey": "Body"
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.ResultHandlingMapModel, Comindware.Platform.Contracts",
+        "MessageTypeAlias": "{title}",
+        "ResponseKey": "Subject"
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.ResultHandlingMapModel, Comindware.Platform.Contracts",
+        "MessageTypeAlias": "false",
+        "ResponseKey": "MeetingEnabled"
+      }
+    ]
+  },
+  "Type": "Outbound",
+  "DataSet": "MailSet",
+  "ResponseFormat": "AsIs",
+  "IsDisabled": false,
+  "MessageName": "Сообщение",
+  "ProcessTemplate": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Undefined"
+  },
+  "RouteTarget": "Undefined",
+  "IsInternal": false,
+  "Severity": "Undefined"
+}

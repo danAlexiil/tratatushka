@@ -1,0 +1,41 @@
+{
+  "$type": "Comindware.Platform.Contracts.UserCommandConfigurationModel, Comindware.Platform.Contracts",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "UserCommand",
+    "Owner": "Priemynarabotu",
+    "Alias": "Zagruzitformusoglasiyanaobrabotkupersonalnykhdannykh"
+  },
+  "Name": "Загрузить форму согласия на обработку персональных данных",
+  "Description": "Загружает форму согласия кандидата на обработку персональных данных",
+  "IsSystem": false,
+  "IsDisabled": false,
+  "IsPrepare": false,
+  "SkipValidation": false,
+  "Context": "Record",
+  "Multiplicity": "OneByOne",
+  "Kind": "ExportObject",
+  "ResultType": "File",
+  "ConfirmationModelConfiguration": {
+    "$type": "Comindware.Platform.Contracts.UserCommandConfirmationModel, Comindware.Platform.Contracts",
+    "Form": {
+      "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+      "Type": "Form",
+      "Owner": "Priemynarabotu",
+      "Alias": "Zagruzitformusoglasiyanaobrabotkupersonalnykhdannykh"
+    },
+    "Template": {
+      "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+      "Type": "MessageTemplate",
+      "Alias": "Zagruzitformusoglasiyanaobrabotkupersonalnykhdannykh67b7"
+    }
+  },
+  "RelatedEntityGlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "ExportTemplate",
+    "Owner": "Priemynarabotu",
+    "Alias": "soglasieKandidata"
+  },
+  "LockStateChangeType": "Undefined",
+  "LockStateVisibilityType": "Undefined"
+}

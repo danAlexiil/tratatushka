@@ -1,0 +1,122 @@
+{
+  "$type": "Comindware.Platform.Contracts.IntermediateEventActivityModel, Comindware.Platform.Contracts",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Activity",
+    "Owner": "Prekrascheniepriema",
+    "Alias": "noneIntermediateEvent1"
+  },
+  "Kind": "ThrowingMessage",
+  "IsInterrupting": false,
+  "MessageDefinition": {
+    "$type": "Comindware.Platform.Contracts.MessageEventDefinitionModel, Comindware.Platform.Contracts",
+    "IsThrowing": true,
+    "MessageType": {
+      "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+      "Type": "MessageTemplate",
+      "Alias": "Prekrascheniepriema"
+    },
+    "MessageName": "Прекращение приема",
+    "MessageReceiver": {
+      "$type": "Comindware.Platform.Contracts.MessageReceiverProcessObjectDefinitionModel, Comindware.Platform.Contracts",
+      "ProcessObjectId": {
+        "$type": "Comindware.Platform.Contracts.CalculationRuleModel, Comindware.Platform.Contracts",
+        "Type": "Calculation",
+        "Definition": {
+          "$type": "Comindware.Platform.Contracts.ExpressionRuleDefinitionModel, Comindware.Platform.Contracts",
+          "Expression": "$PriyomnarabotuRef->idekzemplyaraprotsessa",
+          "Type": "Expression"
+        }
+      },
+      "ReceiverAddressType": "cmw.message.ProcessObjectAddressType",
+      "Type": "ProcessObject"
+    },
+    "InputMapping": {
+      "$type": "Comindware.Platform.Contracts.MessagePayloadDefinitionModel, Comindware.Platform.Contracts",
+      "MessageType": {
+        "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+        "Type": "MessageTemplate",
+        "Alias": "Prekrascheniepriema"
+      },
+      "Data": {
+        "$type": "Comindware.Platform.Contracts.MakeMessageRuleModel, Comindware.Platform.Contracts",
+        "MessageType": {
+          "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+          "Type": "MessageTemplate",
+          "Alias": "Prekrascheniepriema"
+        },
+        "PropertyMap": {
+          "$type": "Comindware.Platform.Contracts.PropertyMapKeyValueModel[], Comindware.Platform.Contracts",
+          "$values": [
+            {
+              "$type": "Comindware.Platform.Contracts.PropertyMapKeyValueModel, Comindware.Platform.Contracts",
+              "Key": {
+                "$type": "Comindware.Platform.Contracts.ModificationActionModel, Comindware.Platform.Contracts",
+                "PropertyPath": {
+                  "$type": "Comindware.Platform.Contracts.GlobalAlias[], Comindware.Platform.Contracts",
+                  "$values": [
+                    {
+                      "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                      "Type": "MessageTemplateProperty",
+                      "Owner": "Prekrascheniepriema",
+                      "Alias": "comment"
+                    }
+                  ]
+                },
+                "PropertyAction": "Replace"
+              },
+              "Value": {
+                "$type": "Comindware.Platform.Contracts.CalculationRuleModel, Comindware.Platform.Contracts",
+                "Type": "Calculation",
+                "Definition": {
+                  "$type": "Comindware.Platform.Contracts.PropertyRuleDefinitionModel, Comindware.Platform.Contracts",
+                  "PropertyPath": {
+                    "$type": "Comindware.Platform.Contracts.GlobalAlias[], Comindware.Platform.Contracts",
+                    "$values": [
+                      {
+                        "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                        "Type": "Attribute",
+                        "Owner": "Prekrascheniyapriyomov",
+                        "Alias": "Prichinaprekrascheniyapriema"
+                      }
+                    ]
+                  },
+                  "Type": "Property"
+                }
+              }
+            }
+          ]
+        },
+        "ContextObject": "task",
+        "Type": "MakeMessage"
+      }
+    }
+  },
+  "BehaviourState": "Undefined",
+  "IsTitleSet": false,
+  "Position": {
+    "$type": "Comindware.Platform.Contracts.VectorModel, Comindware.Platform.Contracts",
+    "X": 380.0,
+    "Y": 100.0
+  },
+  "Size": {
+    "$type": "Comindware.Platform.Contracts.DimensionsModel, Comindware.Platform.Contracts",
+    "Width": 40.0,
+    "Height": 40.0
+  },
+  "Owner": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Activity",
+    "Owner": "Prekrascheniepriema",
+    "Alias": "pool1"
+  },
+  "OwnerEmbeddedProcessActivityAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Undefined"
+  },
+  "MountedOnAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Undefined"
+  },
+  "Type": "IntermediateEvent"
+}

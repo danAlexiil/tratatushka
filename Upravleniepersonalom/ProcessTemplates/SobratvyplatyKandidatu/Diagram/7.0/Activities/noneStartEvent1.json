@@ -1,0 +1,173 @@
+{
+  "$type": "Comindware.Platform.Contracts.StartEventActivityModel, Comindware.Platform.Contracts",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Activity",
+    "Owner": "SobratvyplatyKandidatu",
+    "Alias": "noneStartEvent1"
+  },
+  "Form": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Undefined"
+  },
+  "Kind": "None",
+  "IsInterrupting": false,
+  "BehaviourState": "Undefined",
+  "Title": "Стартовое событие",
+  "IsTitleSet": false,
+  "Position": {
+    "$type": "Comindware.Platform.Contracts.VectorModel, Comindware.Platform.Contracts",
+    "X": 500.0,
+    "Y": 180.0
+  },
+  "Size": {
+    "$type": "Comindware.Platform.Contracts.DimensionsModel, Comindware.Platform.Contracts",
+    "Width": 40.0,
+    "Height": 40.0
+  },
+  "Owner": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Activity",
+    "Owner": "SobratvyplatyKandidatu",
+    "Alias": "pool1"
+  },
+  "OwnerEmbeddedProcessActivityAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Undefined"
+  },
+  "MountedOnAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Undefined"
+  },
+  "Type": "StartEvent",
+  "OnExitRules": {
+    "$type": "Comindware.Platform.Contracts.RuleModel[], Comindware.Platform.Contracts",
+    "$values": [
+      {
+        "$type": "Comindware.Platform.Contracts.ModificationRuleModel, Comindware.Platform.Contracts",
+        "Action": {
+          "$type": "Comindware.Platform.Contracts.ModificationActionModel, Comindware.Platform.Contracts",
+          "PropertyPath": {
+            "$type": "Comindware.Platform.Contracts.GlobalAlias[], Comindware.Platform.Contracts",
+            "$values": [
+              {
+                "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                "Type": "Attribute",
+                "Owner": "VyplatypodolzhnostiKandidatu",
+                "Alias": "Tipvyplaty"
+              }
+            ]
+          },
+          "PropertyAction": "Replace"
+        },
+        "Name": "Записать значение типа выплаты",
+        "Type": "Modification",
+        "Definition": {
+          "$type": "Comindware.Platform.Contracts.ExpressionRuleDefinitionModel, Comindware.Platform.Contracts",
+          "Expression": "$SsylkanavyplatyvShRRef->PaymentsType",
+          "Type": "Expression"
+        }
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.ModificationRuleModel, Comindware.Platform.Contracts",
+        "Action": {
+          "$type": "Comindware.Platform.Contracts.ModificationActionModel, Comindware.Platform.Contracts",
+          "PropertyPath": {
+            "$type": "Comindware.Platform.Contracts.GlobalAlias[], Comindware.Platform.Contracts",
+            "$values": [
+              {
+                "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                "Type": "Attribute",
+                "Owner": "VyplatypodolzhnostiKandidatu",
+                "Alias": "Tipnadbavki"
+              }
+            ]
+          },
+          "PropertyAction": "Replace"
+        },
+        "Name": "Записать значение типа надбавки",
+        "Type": "Modification",
+        "Definition": {
+          "$type": "Comindware.Platform.Contracts.ExpressionRuleDefinitionModel, Comindware.Platform.Contracts",
+          "Expression": "$SsylkanavyplatyvShRRef->PaymentsIndicatorsRef->IndicatorsName",
+          "Type": "Expression"
+        }
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.ModificationRuleModel, Comindware.Platform.Contracts",
+        "Action": {
+          "$type": "Comindware.Platform.Contracts.ModificationActionModel, Comindware.Platform.Contracts",
+          "PropertyPath": {
+            "$type": "Comindware.Platform.Contracts.GlobalAlias[], Comindware.Platform.Contracts",
+            "$values": [
+              {
+                "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                "Type": "Attribute",
+                "Owner": "VyplatypodolzhnostiKandidatu",
+                "Alias": "Vidvyplaty"
+              }
+            ]
+          },
+          "PropertyAction": "Replace"
+        },
+        "Name": "Записать значение вида выплаты",
+        "Type": "Modification",
+        "Definition": {
+          "$type": "Comindware.Platform.Contracts.ExpressionRuleDefinitionModel, Comindware.Platform.Contracts",
+          "Expression": "$SsylkanavyplatyvShRRef->PaymentsName",
+          "Type": "Expression"
+        }
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.ModificationRuleModel, Comindware.Platform.Contracts",
+        "Action": {
+          "$type": "Comindware.Platform.Contracts.ModificationActionModel, Comindware.Platform.Contracts",
+          "PropertyPath": {
+            "$type": "Comindware.Platform.Contracts.GlobalAlias[], Comindware.Platform.Contracts",
+            "$values": [
+              {
+                "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                "Type": "Attribute",
+                "Owner": "VyplatypodolzhnostiKandidatu",
+                "Alias": "Summavyplaty"
+              }
+            ]
+          },
+          "PropertyAction": "Replace"
+        },
+        "Name": "Записать значение суммы выплаты",
+        "Type": "Modification",
+        "Definition": {
+          "$type": "Comindware.Platform.Contracts.ExpressionRuleDefinitionModel, Comindware.Platform.Contracts",
+          "Expression": "$SsylkanavyplatyvShRRef->PaymentsAmount",
+          "Type": "Expression"
+        }
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.ModificationRuleModel, Comindware.Platform.Contracts",
+        "Action": {
+          "$type": "Comindware.Platform.Contracts.ModificationActionModel, Comindware.Platform.Contracts",
+          "PropertyPath": {
+            "$type": "Comindware.Platform.Contracts.GlobalAlias[], Comindware.Platform.Contracts",
+            "$values": [
+              {
+                "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                "Type": "Attribute",
+                "Owner": "VyplatypodolzhnostiKandidatu",
+                "Alias": "Protsentotoklada"
+              }
+            ]
+          },
+          "PropertyAction": "Replace"
+        },
+        "Name": "Записать возможный процент от оклада",
+        "Type": "Modification",
+        "Definition": {
+          "$type": "Comindware.Platform.Contracts.ExpressionRuleDefinitionModel, Comindware.Platform.Contracts",
+          "Expression": "IF(MATCHES(FORMAT(\"{0}\", LIST($SsylkanavyplatyvShRRef->PaymentsIndicatorsRef->IndicatorsName)), \"роцент\"), CONCAT(LIST($SsylkanavyplatyvShRRef->PaymentsIndicatorsRef->IndicatorsValue, \"%\")), \"\")\n",
+          "Type": "Expression"
+        }
+      }
+    ]
+  }
+}

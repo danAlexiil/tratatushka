@@ -1,0 +1,24 @@
+{
+  "$type": "Comindware.Platform.Contracts.DocumentExportTemplateModel, Comindware.Platform.Contracts",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "ExportTemplate",
+    "Owner": "Priemynarabotu",
+    "Alias": "ShablonNapravlenienapredvaritelnymeditsinskiyosmotr"
+  },
+  "Name": "ShablonNapravlenienapredvaritelnymeditsinskiyosmotr",
+  "ExportSourceTemplate": {
+    "$type": "Comindware.Platform.Contracts.ExportSourceTemplateFromDocument, Comindware.Platform.Contracts",
+    "Type": "Document",
+    "FileName": "WA-ШАБЛОН Направление на  предварительный медосмотр.docx",
+    "FileType": "Word",
+    "StreamId": "cmw.xmlns:.stream:///.e1b61426-a12d-4624-8aba-5249b8079acd"
+  },
+  "OutputFileNameTemplate": {
+    "$type": "Comindware.Platform.Contracts.OutputFileNameTemplateFromRule, Comindware.Platform.Contracts",
+    "Type": "Rule",
+    "RuleId": "rule.12",
+    "Expression": "FORMAT(\"{0} - {1:yyyy-MM-dd} - Направление на предварительный медицинский осмотр\", LIST($KandidatRef->FIO, NOW()))"
+  },
+  "ExportAsPdf": true
+}

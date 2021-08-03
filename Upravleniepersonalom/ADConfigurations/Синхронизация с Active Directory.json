@@ -1,0 +1,65 @@
+{
+  "$type": "Comindware.Platform.Contracts.ADConfigurationModel, Comindware.Platform.Contracts",
+  "Name": "Синхронизация с Active Directory",
+  "Container": "sln.4_ad",
+  "Channel": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "CommunicationChannel",
+    "Alias": "Канал Active Directory"
+  },
+  "Template": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "AccountTemplate",
+    "Alias": "Sotrudniki9"
+  },
+  "TemplateMap": {
+    "$type": "System.Collections.Generic.List`1[[Comindware.Platform.Contracts.ADAttributeMapModel, Comindware.Platform.Contracts]], mscorlib",
+    "$values": [
+      {
+        "$type": "Comindware.Platform.Contracts.ADAttributeMapModel, Comindware.Platform.Contracts",
+        "Alias": {
+          "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+          "Type": "Undefined"
+        },
+        "Property": {
+          "$type": "Comindware.Platform.Contracts.ReferenceModel, Comindware.Platform.Contracts",
+          "Alias": {
+            "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+            "Type": "Attribute",
+            "Owner": "Sotrudniki9",
+            "Alias": "ERFL"
+          },
+          "Id": "op.421",
+          "Name": "ЕРФЛ "
+        },
+        "IsMandatory": false
+      }
+    ]
+  },
+  "SelectedGroups": {
+    "$type": "System.Collections.Generic.List`1[[Comindware.Platform.Contracts.ReferenceModel, Comindware.Platform.Contracts]], mscorlib",
+    "$values": [
+      {
+        "$type": "Comindware.Platform.Contracts.ReferenceModel, Comindware.Platform.Contracts",
+        "Alias": {
+          "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+          "Type": "Undefined",
+          "Alias": "CN=Comindware admins,OU=Comindware,OU=ServiceAccounts,OU=_Service,DC=corp,DC=mipt,DC=ru"
+        },
+        "Id": "S-1-5-21-192732629-197439161-2842023993-10985",
+        "Name": "Comindware admins"
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.ReferenceModel, Comindware.Platform.Contracts",
+        "Alias": {
+          "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+          "Type": "Undefined",
+          "Alias": "CN=Staff MIPT,OU=Comindware,OU=ServiceAccounts,OU=_Service,DC=corp,DC=mipt,DC=ru"
+        },
+        "Id": "S-1-5-21-192732629-197439161-2842023993-12614",
+        "Name": "Staff MIPT"
+      }
+    ]
+  },
+  "BehaviourState": "Undefined"
+}

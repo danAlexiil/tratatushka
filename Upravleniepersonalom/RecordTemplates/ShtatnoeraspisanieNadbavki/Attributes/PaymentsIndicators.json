@@ -1,0 +1,30 @@
+{
+  "$type": "Comindware.Platform.Contracts.AttributeModel, Comindware.Platform.Contracts",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Attribute",
+    "Owner": "ShtatnoeraspisanieNadbavki",
+    "Alias": "PaymentsIndicators"
+  },
+  "Type": "Instance",
+  "Format": "Undefined",
+  "Name": "PaymentsIndicators",
+  "IsSystem": false,
+  "IsDisabled": false,
+  "IsUnique": false,
+  "IsIndexed": false,
+  "IsTracked": false,
+  "IsMultiValue": true,
+  "IsTitle": false,
+  "IsMandatory": false,
+  "IsOwnership": true,
+  "IsCalculated": false,
+  "InstanceGlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Attribute",
+    "Owner": "ShtatnoeraspisanieIndikatornadbavki",
+    "Alias": "Payments"
+  },
+  "ImageColorType": "Original",
+  "ImagePreserveAspectRatio": false
+}

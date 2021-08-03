@@ -1,0 +1,24 @@
+{
+  "$type": "Comindware.Platform.Contracts.DocumentExportTemplateModel, Comindware.Platform.Contracts",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "ExportTemplate",
+    "Owner": "Priemynarabotu",
+    "Alias": "trud_dogov_sovmestitel"
+  },
+  "Name": "trud_dogov_sovmestitel",
+  "ExportSourceTemplate": {
+    "$type": "Comindware.Platform.Contracts.ExportSourceTemplateFromDocument, Comindware.Platform.Contracts",
+    "Type": "Document",
+    "FileName": "WA - ШАБЛОН Трудового договора для совместителя (для портала НИЧ) 2021-07-13.docx",
+    "FileType": "Word",
+    "StreamId": "cmw.xmlns:.stream:///.bc06f3fc-9460-48d8-8fd7-979c5912cd3f"
+  },
+  "OutputFileNameTemplate": {
+    "$type": "Comindware.Platform.Contracts.OutputFileNameTemplateFromRule, Comindware.Platform.Contracts",
+    "Type": "Rule",
+    "RuleId": "rule.9",
+    "Expression": "FORMAT(\"{0}_{1:yyyy-MM-dd}_Трудовой_договор_совместителя_НИЧ\", LIST(CONCAT(LIST($KandidatRef->Familiya, \"_\", $KandidatRef->Imya, \"_\", $KandidatRef->Otchestvo)), NOW()))"
+  },
+  "ExportAsPdf": false
+}

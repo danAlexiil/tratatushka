@@ -1,0 +1,66 @@
+{
+  "$type": "Comindware.Platform.Contracts.RoleWorkspaceConfigurationModel, Comindware.Platform.Contracts",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "RoleWorkspace",
+    "Alias": "workspace1500"
+  },
+  "Name": "Личный кабинет",
+  "Roles": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias[], Comindware.Platform.Contracts",
+    "$values": [
+      {
+        "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+        "Type": "RoleConfiguration",
+        "Alias": "Kandidat"
+      }
+    ]
+  },
+  "NavigationItems": {
+    "$type": "Comindware.Platform.Contracts.NavigationItemModel[], Comindware.Platform.Contracts",
+    "$values": [
+      {
+        "$type": "Comindware.Platform.Contracts.NavigationItemModel, Comindware.Platform.Contracts",
+        "Name": "Главная страница",
+        "Description": "Главная страница",
+        "Priority": 5,
+        "ItemType": "DashboardPage",
+        "IconClass": "home",
+        "Target": "Glavnayastranitsa",
+        "Severity": "None"
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.NavigationItemModel, Comindware.Platform.Contracts",
+        "Name": "Разделитель",
+        "Priority": 4,
+        "ItemType": "Splitter",
+        "Severity": "None"
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.NavigationItemModel, Comindware.Platform.Contracts",
+        "Name": "Мои задачи",
+        "Priority": 3,
+        "ItemType": "MyTasks",
+        "IconClass": "tasks",
+        "Severity": "None"
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.NavigationItemModel, Comindware.Platform.Contracts",
+        "Name": "Разделитель",
+        "Priority": 2,
+        "ItemType": "Splitter",
+        "Severity": "None"
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.NavigationItemModel, Comindware.Platform.Contracts",
+        "Name": "Моё собеседование",
+        "Container": "Priemynarabotu",
+        "Priority": 1,
+        "ItemType": "RecordTemplateList",
+        "IconClass": "user-plus",
+        "Target": "Moypriemnarabotu",
+        "Severity": "None"
+      }
+    ]
+  }
+}

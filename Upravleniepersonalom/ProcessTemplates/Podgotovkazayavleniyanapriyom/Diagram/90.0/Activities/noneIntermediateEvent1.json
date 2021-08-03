@@ -1,0 +1,261 @@
+{
+  "$type": "Comindware.Platform.Contracts.IntermediateEventActivityModel, Comindware.Platform.Contracts",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Activity",
+    "Owner": "Podgotovkazayavleniyanapriyom",
+    "Alias": "noneIntermediateEvent1"
+  },
+  "Kind": "ThrowingMessage",
+  "IsInterrupting": false,
+  "MessageDefinition": {
+    "$type": "Comindware.Platform.Contracts.MessageEventDefinitionModel, Comindware.Platform.Contracts",
+    "IsThrowing": true,
+    "MessageType": {
+      "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+      "Type": "MessageTemplate",
+      "Alias": "Otpravka_soobscheniya7e85"
+    },
+    "MessageName": "Сообщение",
+    "MessageReceiver": {
+      "$type": "Comindware.Platform.Contracts.MessageReceiverExternalSocketDefinitionModel, Comindware.Platform.Contracts",
+      "ReceiverAddressType": "cmw.message.ExternalSocketAddressType",
+      "Type": "ExternalSocket"
+    },
+    "InputMapping": {
+      "$type": "Comindware.Platform.Contracts.MessagePayloadDefinitionModel, Comindware.Platform.Contracts",
+      "MessageType": {
+        "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+        "Type": "MessageTemplate",
+        "Alias": "Otpravka_soobscheniya7e85"
+      },
+      "Data": {
+        "$type": "Comindware.Platform.Contracts.MakeMessageRuleModel, Comindware.Platform.Contracts",
+        "MessageType": {
+          "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+          "Type": "MessageTemplate",
+          "Alias": "Otpravka_soobscheniya7e85"
+        },
+        "PropertyMap": {
+          "$type": "Comindware.Platform.Contracts.PropertyMapKeyValueModel[], Comindware.Platform.Contracts",
+          "$values": [
+            {
+              "$type": "Comindware.Platform.Contracts.PropertyMapKeyValueModel, Comindware.Platform.Contracts",
+              "Key": {
+                "$type": "Comindware.Platform.Contracts.ModificationActionModel, Comindware.Platform.Contracts",
+                "PropertyPath": {
+                  "$type": "Comindware.Platform.Contracts.GlobalAlias[], Comindware.Platform.Contracts",
+                  "$values": [
+                    {
+                      "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                      "Type": "MessageTemplateProperty",
+                      "Owner": "Soobscheniekandidatu",
+                      "Alias": "email"
+                    }
+                  ]
+                },
+                "PropertyAction": "Replace"
+              },
+              "Value": {
+                "$type": "Comindware.Platform.Contracts.CalculationRuleModel, Comindware.Platform.Contracts",
+                "Type": "Calculation",
+                "Definition": {
+                  "$type": "Comindware.Platform.Contracts.PropertyRuleDefinitionModel, Comindware.Platform.Contracts",
+                  "PropertyPath": {
+                    "$type": "Comindware.Platform.Contracts.GlobalAlias[], Comindware.Platform.Contracts",
+                    "$values": [
+                      {
+                        "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                        "Type": "Attribute",
+                        "Owner": "Priemynarabotu",
+                        "Alias": "Kandidat"
+                      },
+                      {
+                        "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                        "Type": "Attribute",
+                        "Owner": "Kandidaty",
+                        "Alias": "Email"
+                      }
+                    ]
+                  },
+                  "Type": "Property"
+                }
+              }
+            },
+            {
+              "$type": "Comindware.Platform.Contracts.PropertyMapKeyValueModel, Comindware.Platform.Contracts",
+              "Key": {
+                "$type": "Comindware.Platform.Contracts.ModificationActionModel, Comindware.Platform.Contracts",
+                "PropertyPath": {
+                  "$type": "Comindware.Platform.Contracts.GlobalAlias[], Comindware.Platform.Contracts",
+                  "$values": [
+                    {
+                      "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                      "Type": "MessageTemplateProperty",
+                      "Owner": "Soobscheniekandidatu",
+                      "Alias": "title"
+                    }
+                  ]
+                },
+                "PropertyAction": "Replace"
+              },
+              "Value": {
+                "$type": "Comindware.Platform.Contracts.CalculationRuleModel, Comindware.Platform.Contracts",
+                "Type": "Calculation",
+                "Definition": {
+                  "$type": "Comindware.Platform.Contracts.ValuesRuleDefinitionModel, Comindware.Platform.Contracts",
+                  "Values": {
+                    "$type": "System.Object[], mscorlib",
+                    "$values": [
+                      "Предоставить информацию для собеседования"
+                    ]
+                  },
+                  "Type": "Values"
+                }
+              }
+            },
+            {
+              "$type": "Comindware.Platform.Contracts.PropertyMapKeyValueModel, Comindware.Platform.Contracts",
+              "Key": {
+                "$type": "Comindware.Platform.Contracts.ModificationActionModel, Comindware.Platform.Contracts",
+                "PropertyPath": {
+                  "$type": "Comindware.Platform.Contracts.GlobalAlias[], Comindware.Platform.Contracts",
+                  "$values": [
+                    {
+                      "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                      "Type": "MessageTemplateProperty",
+                      "Owner": "Soobscheniekandidatu",
+                      "Alias": "body"
+                    }
+                  ]
+                },
+                "PropertyAction": "Replace"
+              },
+              "Value": {
+                "$type": "Comindware.Platform.Contracts.CalculationRuleModel, Comindware.Platform.Contracts",
+                "Type": "Calculation",
+                "Definition": {
+                  "$type": "Comindware.Platform.Contracts.ExpressionRuleDefinitionModel, Comindware.Platform.Contracts",
+                  "Expression": "FORMAT(\n    \"Уважаемый(-ая), {0}! Для прохождения собеседования на сайте {2} для Вас создан Личный кабинет. Ваш логин {1}, пароль соответствует логину. Зайдите пожалуйста в свой Личный кабинет и выберите раздел (слева) Мои задачи. Кликните два раза мышью по названию задачи и начинайте ее выполнять. Не забудьте нажать Завершить задачу после выполнения всех необходимых действий данного этапа процесса. По мере прохождения процесса собеседования Вам будут приходить и другие задачи, которые Вам надо будет выполнить.\"\n    ,\n    LIST(\n        $KandidatRef->FIO,\n        $KandidatRef->Login,\n        $AdresinstansaComindware))\n",
+                  "Type": "Expression"
+                }
+              }
+            },
+            {
+              "$type": "Comindware.Platform.Contracts.PropertyMapKeyValueModel, Comindware.Platform.Contracts",
+              "Key": {
+                "$type": "Comindware.Platform.Contracts.ModificationActionModel, Comindware.Platform.Contracts",
+                "PropertyPath": {
+                  "$type": "Comindware.Platform.Contracts.GlobalAlias[], Comindware.Platform.Contracts",
+                  "$values": [
+                    {
+                      "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                      "Type": "MessageTemplateProperty",
+                      "Owner": "Soobscheniekandidatu",
+                      "Alias": "attachments"
+                    }
+                  ]
+                },
+                "PropertyAction": "Replace"
+              },
+              "Value": {
+                "$type": "Comindware.Platform.Contracts.CalculationRuleModel, Comindware.Platform.Contracts",
+                "Type": "Calculation",
+                "Definition": {
+                  "$type": "Comindware.Platform.Contracts.ValuesRuleDefinitionModel, Comindware.Platform.Contracts",
+                  "Type": "Values"
+                }
+              }
+            },
+            {
+              "$type": "Comindware.Platform.Contracts.PropertyMapKeyValueModel, Comindware.Platform.Contracts",
+              "Key": {
+                "$type": "Comindware.Platform.Contracts.ModificationActionModel, Comindware.Platform.Contracts",
+                "PropertyPath": {
+                  "$type": "Comindware.Platform.Contracts.GlobalAlias[], Comindware.Platform.Contracts",
+                  "$values": [
+                    {
+                      "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                      "Type": "MessageTemplateProperty",
+                      "Owner": "Soobscheniekandidatu",
+                      "Alias": "processid"
+                    }
+                  ]
+                },
+                "PropertyAction": "Replace"
+              },
+              "Value": {
+                "$type": "Comindware.Platform.Contracts.CalculationRuleModel, Comindware.Platform.Contracts",
+                "Type": "Calculation",
+                "Definition": {
+                  "$type": "Comindware.Platform.Contracts.ValuesRuleDefinitionModel, Comindware.Platform.Contracts",
+                  "Type": "Values"
+                }
+              }
+            }
+          ]
+        },
+        "ContextObject": "task",
+        "Type": "MakeMessage"
+      }
+    }
+  },
+  "BehaviourState": "Undefined",
+  "Title": "Отправка сообщения кандидату о регистрации в личном кабинете",
+  "IsTitleSet": false,
+  "Position": {
+    "$type": "Comindware.Platform.Contracts.VectorModel, Comindware.Platform.Contracts",
+    "X": 640.0,
+    "Y": 200.0
+  },
+  "Size": {
+    "$type": "Comindware.Platform.Contracts.DimensionsModel, Comindware.Platform.Contracts",
+    "Width": 40.0,
+    "Height": 55.46875
+  },
+  "Owner": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Activity",
+    "Owner": "Podgotovkazayavleniyanapriyom",
+    "Alias": "lane1"
+  },
+  "OwnerEmbeddedProcessActivityAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Undefined"
+  },
+  "MountedOnAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Undefined"
+  },
+  "Type": "IntermediateEvent",
+  "OnEnterRules": {
+    "$type": "Comindware.Platform.Contracts.RuleModel[], Comindware.Platform.Contracts",
+    "$values": [
+      {
+        "$type": "Comindware.Platform.Contracts.ModificationRuleModel, Comindware.Platform.Contracts",
+        "Action": {
+          "$type": "Comindware.Platform.Contracts.ModificationActionModel, Comindware.Platform.Contracts",
+          "PropertyPath": {
+            "$type": "Comindware.Platform.Contracts.GlobalAlias[], Comindware.Platform.Contracts",
+            "$values": [
+              {
+                "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                "Type": "Attribute",
+                "Owner": "Priemynarabotu",
+                "Alias": "Kandidat_newuser"
+              }
+            ]
+          },
+          "PropertyAction": "Replace"
+        },
+        "Name": "Изменить значение",
+        "Type": "Modification",
+        "Definition": {
+          "$type": "Comindware.Platform.Contracts.ExpressionRuleDefinitionModel, Comindware.Platform.Contracts",
+          "Expression": "from a in db->_Account where a->fullName == $KandidatRef->FIO select a->id",
+          "Type": "Expression"
+        }
+      }
+    ]
+  }
+}

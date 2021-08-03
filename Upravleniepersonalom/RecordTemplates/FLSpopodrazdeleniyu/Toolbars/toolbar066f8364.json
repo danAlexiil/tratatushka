@@ -1,0 +1,62 @@
+{
+  "$type": "Comindware.Platform.Contracts.ToolbarModel, Comindware.Platform.Contracts",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Toolbar",
+    "Owner": "FLSpopodrazdeleniyu",
+    "Alias": "toolbar066f8364"
+  },
+  "Name": "toolbar",
+  "IsDefaultForLists": false,
+  "IsDefaultForForms": false,
+  "IsDefaultForProcess": false,
+  "IsDefaultForProcessDesigner": false,
+  "IsDefaultForTaskLists": false,
+  "Items": {
+    "$type": "System.Collections.Generic.List`1[[Comindware.Platform.Contracts.ToolbarItemModel, Comindware.Platform.Contracts]], mscorlib",
+    "$values": [
+      {
+        "$type": "Comindware.Platform.Contracts.ToolbarItemModel, Comindware.Platform.Contracts",
+        "CollectionAction": {
+          "$type": "Comindware.Platform.Contracts.CollectionActionModel, Comindware.Platform.Contracts",
+          "Type": "Create",
+          "ExecutionFormat": "Inline"
+        },
+        "Name": "Создать",
+        "Order": 0,
+        "Type": "Action",
+        "IconType": "Undefined",
+        "IconClass": "plus",
+        "Severity": "None"
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.ToolbarItemModel, Comindware.Platform.Contracts",
+        "CollectionAction": {
+          "$type": "Comindware.Platform.Contracts.CollectionActionModel, Comindware.Platform.Contracts",
+          "Type": "Copy",
+          "ExecutionFormat": "Undefined"
+        },
+        "Name": "Копировать",
+        "Order": 1,
+        "Type": "Action",
+        "IconType": "Undefined",
+        "IconClass": "plus",
+        "Severity": "None"
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.ToolbarItemModel, Comindware.Platform.Contracts",
+        "CollectionAction": {
+          "$type": "Comindware.Platform.Contracts.CollectionActionModel, Comindware.Platform.Contracts",
+          "Type": "Exclude",
+          "ExecutionFormat": "Undefined"
+        },
+        "Name": "Исключить",
+        "Order": 2,
+        "Type": "Action",
+        "IconType": "Undefined",
+        "IconClass": "times",
+        "Severity": "None"
+      }
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "$type": "Comindware.Platform.Contracts.DocumentExportTemplateModel, Comindware.Platform.Contracts",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "ExportTemplate",
+    "Owner": "Priemynarabotu",
+    "Alias": "T4example"
+  },
+  "Name": "T4example",
+  "ExportSourceTemplate": {
+    "$type": "Comindware.Platform.Contracts.ExportSourceTemplateFromDocument, Comindware.Platform.Contracts",
+    "Type": "Document",
+    "FileName": "Образец заполнения карточки Т-4.xls",
+    "FileType": "Excel",
+    "StreamId": "cmw.xmlns:.stream:///.80a0bf46-9817-4124-9c02-7407f53fb160"
+  },
+  "OutputFileNameTemplate": {
+    "$type": "Comindware.Platform.Contracts.OutputFileNameTemplateFromValue, Comindware.Platform.Contracts",
+    "Type": "Value",
+    "Value": "Пример заполнения Учетной карточки научного и научно-педагогического работника (карточка Т4)"
+  },
+  "ExportAsPdf": false
+}

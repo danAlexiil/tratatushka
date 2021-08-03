@@ -1,0 +1,58 @@
+{
+  "$type": "Comindware.Platform.Contracts.TaskActivityModel, Comindware.Platform.Contracts",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Activity",
+    "Owner": "ImportSOAP",
+    "Alias": "scriptTask4"
+  },
+  "Kind": "Script",
+  "ScriptDefinition": {
+    "$type": "Comindware.Platform.Contracts.ScriptTaskDefinitionModel, Comindware.Platform.Contracts",
+    "MaxExecutionTime": "03:00:00",
+    "AttemptCount": 1,
+    "AttemptInterval": "00:00:00",
+    "Script": {
+      "$type": "Comindware.Platform.Contracts.CustomRuleModel, Comindware.Platform.Contracts",
+      "Type": "Custom",
+      "Definition": {
+        "$type": "Comindware.Platform.Contracts.CSharpRuleDefinitionModel, Comindware.Platform.Contracts",
+        "Code": "using System;\nusing System.Collections.Generic;\nusing System.IO;\nusing System.Linq;\nusing System.Text;\nusing System.Xml;\nusing System.Xml.Linq;\nusing System.Xml.Serialization;\n\nusing Comindware.Data.Entity;\nusing Comindware.TeamNetwork.Api.Data.UserCommands;\nusing Comindware.TeamNetwork.Api.Data;\n\npublic class Script\n{\n\t\n\tprivate const string FLS_ENTITY = \"FLS\";\n    \n    private const string DEPARTMENT_ENTITY = \"Podrazdeleniya\";\n    \n    private const string LINK_ENTITY = \"FLSpopodrazdeleniyu\";\n    \n    private const string NAME = \"DEPARTMENT_FLS\";\n    \n    private const string DEPARTMENT_KEY = \"DepartmentId\";\n    \n    private const string LINK_DEP_KEY = \"Podrazdelenie\";\n    \n    private const string LINK_FLS_KEY = \"FLS\";\n    \n    private const string ID_KEY = \"id\";\n\n    public static void Main(Comindware.Process.Api.Data.ScriptContext context, Comindware.Entities entities)\n    {\n\t\tComindware.ImportSoapData inst = entities.ImportSoapData.First(item=>item.id == context.BusinessObjectId);\n        inst.DateTime = DateTime.Now;  \n        inst.ProcessId = context.ProcessId;\n\t\tinst.ServiceName = NAME;\n        inst.Success = true;\n        StringBuilder errorData = new StringBuilder();\n\t\ttry\n\t\t{\n\t\t\tstring fls_entity = FLS_ENTITY;\n\t\t\tvar dep_data = Api.TeamNetwork.ObjectService.ListWithAlias (DEPARTMENT_ENTITY);\n\t\t\tvar fls_data = Api.TeamNetwork.ObjectService.ListWithAlias (fls_entity);\n            var link_data = Api.TeamNetwork.ObjectService.ListWithAlias (LINK_ENTITY);\n\t\t\tvar dep_dict = new Dictionary<string, string>();\n\t\t\tforeach (var item in dep_data)\n\t\t\t{\n                if (!item.ContainsKey(DEPARTMENT_KEY) || item[DEPARTMENT_KEY] == null)\n                    continue;\n\t\t\t\tvar id_1c = item[DEPARTMENT_KEY].ToString();\n\t\t\t\tvar id = item[ID_KEY].ToString();\n\t\t\t\tdep_dict.Add(id_1c, id);\n\t\t\t}\n\t\t\t\n            var link_dict = new Dictionary<string, object>();\n            foreach (var item in link_data)\n            {\n                if (!item.ContainsKey(LINK_DEP_KEY) || item[LINK_DEP_KEY] == null)\n                    continue;\n                if (!item.ContainsKey(LINK_FLS_KEY) || item[LINK_FLS_KEY] == null)\n                    continue;\n                string key = string.Format(\"{0}:{1}\", item[LINK_DEP_KEY], item[LINK_FLS_KEY]);\n                if (!link_dict.ContainsKey(key))\n                {\n                    link_dict.Add(key, item[ID_KEY]);\n                }\n            }\n\t\t\t\n\t\t\tforeach (var item in fls_data)\n\t\t\t{\n                if (!item.ContainsKey(DEPARTMENT_KEY) || item[DEPARTMENT_KEY] == null)\n                {\n                    continue;\n                }\n\t\t\t\tvar dep_id_1c = item[DEPARTMENT_KEY].ToString();\n\t\t\t\tif (!dep_dict.ContainsKey(dep_id_1c))\n\t\t\t\t{\n                    continue;\n\t\t\t\t}\n                var dep_id = dep_dict[dep_id_1c];\n                var fls_id = item[ID_KEY];\n                string key = string.Format(\"{0}:{1}\", dep_id, fls_id);\n                if (link_dict.ContainsKey(key))\n                {\n                    continue;\n                }\n                \n                else\n                {\n\t\t\t\t\tvar upd_dict = new Dictionary<string, Object>();\n\t\t\t\t\tupd_dict.Add(LINK_FLS_KEY, fls_id);\n                    upd_dict.Add(LINK_DEP_KEY, dep_id);\n\t\t\t\t\tApi.TeamNetwork.ObjectService.CreateWithAlias(LINK_ENTITY, upd_dict);\n                }\n\t\t\t}\n\t\t\tinst.ErrorMessage += inst.ErrorMessage + errorData.ToString();\n\t\t}\n\t\tcatch (Exception exc)\n\t\t{\n\t\t\tinst.Success = false;\n\t\t\tinst.ErrorMessage += inst.ErrorMessage + NAME + errorData.ToString() + exc.ToString();\n\t\t}\n\t\tentities.ImportSoapData.Edit(inst);\n    }\n}",
+        "Type": "CSharpExpression"
+      }
+    }
+  },
+  "FormAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "ProcessForm",
+    "Owner": "ImportSOAP"
+  },
+  "BehaviourState": "Undefined",
+  "Title": "Связать ФЛС и подразделение",
+  "IsTitleSet": false,
+  "Position": {
+    "$type": "Comindware.Platform.Contracts.VectorModel, Comindware.Platform.Contracts",
+    "X": 1100.0,
+    "Y": 165.0
+  },
+  "Size": {
+    "$type": "Comindware.Platform.Contracts.DimensionsModel, Comindware.Platform.Contracts",
+    "Width": 120.0,
+    "Height": 70.0
+  },
+  "Owner": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Activity",
+    "Owner": "ImportSOAP",
+    "Alias": "pool1"
+  },
+  "OwnerEmbeddedProcessActivityAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Undefined"
+  },
+  "MountedOnAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Undefined"
+  },
+  "Type": "Task"
+}

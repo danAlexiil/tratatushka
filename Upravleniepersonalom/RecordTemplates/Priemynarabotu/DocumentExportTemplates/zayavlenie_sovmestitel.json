@@ -1,0 +1,24 @@
+{
+  "$type": "Comindware.Platform.Contracts.DocumentExportTemplateModel, Comindware.Platform.Contracts",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "ExportTemplate",
+    "Owner": "Priemynarabotu",
+    "Alias": "zayavlenie_sovmestitel"
+  },
+  "Name": "zayavlenie_sovmestitel",
+  "ExportSourceTemplate": {
+    "$type": "Comindware.Platform.Contracts.ExportSourceTemplateFromDocument, Comindware.Platform.Contracts",
+    "Type": "Document",
+    "FileName": "WA-ШАБЛОН Заявления о приеме  на работу (для портала НИЧ) совместителя 2021-07-27.docx",
+    "FileType": "Word",
+    "StreamId": "cmw.xmlns:.stream:///.61885c22-8133-43a9-bdd7-be394690553b"
+  },
+  "OutputFileNameTemplate": {
+    "$type": "Comindware.Platform.Contracts.OutputFileNameTemplateFromRule, Comindware.Platform.Contracts",
+    "Type": "Rule",
+    "RuleId": "rule.8",
+    "Expression": "FORMAT(\"{0}_{1:yyyy-MM-dd}_Заявление_о_приеме_на работу_совместителя_НИЧ\", LIST(CONCAT(LIST($KandidatRef->Familiya, \"_\", $KandidatRef->Imya, \"_\", $KandidatRef->Otchestvo)), NOW()))"
+  },
+  "ExportAsPdf": false
+}

@@ -1,0 +1,10 @@
+{
+  "$type": "Comindware.Platform.Contracts.MessageTypeConfigurationModel, Comindware.Platform.Contracts",
+  "Name": "ZagruzitkartochkuT4dlyazapolneniya6597",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "MessageTemplate",
+    "Alias": "ZagruzitkartochkuT4dlyazapolneniya6597"
+  },
+  "Kind": "InternalKind"
+}

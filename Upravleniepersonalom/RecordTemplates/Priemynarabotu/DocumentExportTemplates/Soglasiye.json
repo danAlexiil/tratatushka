@@ -1,0 +1,24 @@
+{
+  "$type": "Comindware.Platform.Contracts.DocumentExportTemplateModel, Comindware.Platform.Contracts",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "ExportTemplate",
+    "Owner": "Priemynarabotu",
+    "Alias": "Soglasiye"
+  },
+  "Name": "Soglasiye",
+  "ExportSourceTemplate": {
+    "$type": "Comindware.Platform.Contracts.ExportSourceTemplateFromDocument, Comindware.Platform.Contracts",
+    "Type": "Document",
+    "FileName": "WA - ШАБЛОН Согласия на обработку персональных данных.docx",
+    "FileType": "Word",
+    "StreamId": "cmw.xmlns:.stream:///.49157d9d-fec6-41db-8f39-122a4329193c"
+  },
+  "OutputFileNameTemplate": {
+    "$type": "Comindware.Platform.Contracts.OutputFileNameTemplateFromRule, Comindware.Platform.Contracts",
+    "Type": "Rule",
+    "RuleId": "rule.15",
+    "Expression": "FORMAT(\"{0}_{1:yyyy-MM-dd}_Согласие_на_обработку_персональных_данных_работника\", LIST(CONCAT(LIST($KandidatRef->Familiya, \"_\", $KandidatRef->Imya, \"_\", $KandidatRef->Otchestvo)), NOW()))"
+  },
+  "ExportAsPdf": false
+}

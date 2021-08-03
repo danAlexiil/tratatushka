@@ -1,0 +1,25 @@
+{
+  "$type": "Comindware.Platform.Contracts.UserCommandConfigurationModel, Comindware.Platform.Contracts",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "UserCommand",
+    "Owner": "Priemynarabotu",
+    "Alias": "Udalit"
+  },
+  "Name": "Удалить",
+  "IsSystem": false,
+  "IsDisabled": false,
+  "IsPrepare": false,
+  "SkipValidation": false,
+  "Context": "Record",
+  "Multiplicity": "OneByOne",
+  "Kind": "Delete",
+  "ResultType": "DataChange",
+  "ConditionRule": "true &&  (USER() == (from a in db->_AccountGroup where a->groupName == \"Comindware admins\" select a->groupUsers->id))",
+  "RelatedEntityGlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Undefined"
+  },
+  "LockStateChangeType": "Unlock",
+  "LockStateVisibilityType": "HiddenOnLock"
+}

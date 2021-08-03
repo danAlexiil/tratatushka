@@ -1,0 +1,212 @@
+{
+  "$type": "Comindware.Platform.Contracts.TaskActivityModel, Comindware.Platform.Contracts",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Activity",
+    "Owner": "Podgotovkazayavleniyanapriyom",
+    "Alias": "globalFunctionTask1"
+  },
+  "Kind": "GlobalFunction",
+  "GlobalFunctionDefinition": {
+    "$type": "Comindware.Platform.Contracts.GlobalFunctionTaskDefinitionModel, Comindware.Platform.Contracts",
+    "MaxExecutionTime": "03:00:00",
+    "AttemptCount": 1,
+    "AttemptInterval": "00:05:00",
+    "GlobalFunction": {
+      "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+      "Type": "GlobalFunction",
+      "Alias": "Sozdaniepolzovatelya"
+    },
+    "InputMessageType": {
+      "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+      "Type": "Undefined"
+    },
+    "ReturnMessageType": {
+      "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+      "Type": "Undefined"
+    },
+    "InputMappings": {
+      "$type": "Comindware.Platform.Contracts.MakeMessageRuleModel, Comindware.Platform.Contracts",
+      "MessageType": {
+        "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+        "Type": "Undefined"
+      },
+      "PropertyMap": {
+        "$type": "Comindware.Platform.Contracts.PropertyMapKeyValueModel[], Comindware.Platform.Contracts",
+        "$values": [
+          {
+            "$type": "Comindware.Platform.Contracts.PropertyMapKeyValueModel, Comindware.Platform.Contracts",
+            "Key": {
+              "$type": "Comindware.Platform.Contracts.ModificationActionModel, Comindware.Platform.Contracts",
+              "PropertyPath": {
+                "$type": "Comindware.Platform.Contracts.GlobalAlias[], Comindware.Platform.Contracts",
+                "$values": [
+                  {
+                    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                    "Type": "MessageTemplateProperty",
+                    "Owner": "Sozdaniepolzovatelya2",
+                    "Alias": "email"
+                  }
+                ]
+              },
+              "PropertyAction": "Replace"
+            },
+            "Value": {
+              "$type": "Comindware.Platform.Contracts.CalculationRuleModel, Comindware.Platform.Contracts",
+              "Type": "Calculation",
+              "Definition": {
+                "$type": "Comindware.Platform.Contracts.PropertyRuleDefinitionModel, Comindware.Platform.Contracts",
+                "PropertyPath": {
+                  "$type": "Comindware.Platform.Contracts.GlobalAlias[], Comindware.Platform.Contracts",
+                  "$values": [
+                    {
+                      "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                      "Type": "Attribute",
+                      "Owner": "Priemynarabotu",
+                      "Alias": "Kandidat"
+                    },
+                    {
+                      "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                      "Type": "Attribute",
+                      "Owner": "Kandidaty",
+                      "Alias": "Email"
+                    }
+                  ]
+                },
+                "Type": "Property"
+              }
+            }
+          },
+          {
+            "$type": "Comindware.Platform.Contracts.PropertyMapKeyValueModel, Comindware.Platform.Contracts",
+            "Key": {
+              "$type": "Comindware.Platform.Contracts.ModificationActionModel, Comindware.Platform.Contracts",
+              "PropertyPath": {
+                "$type": "Comindware.Platform.Contracts.GlobalAlias[], Comindware.Platform.Contracts",
+                "$values": [
+                  {
+                    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                    "Type": "MessageTemplateProperty",
+                    "Owner": "Sozdaniepolzovatelya2",
+                    "Alias": "name"
+                  }
+                ]
+              },
+              "PropertyAction": "Replace"
+            },
+            "Value": {
+              "$type": "Comindware.Platform.Contracts.CalculationRuleModel, Comindware.Platform.Contracts",
+              "Type": "Calculation",
+              "Definition": {
+                "$type": "Comindware.Platform.Contracts.PropertyRuleDefinitionModel, Comindware.Platform.Contracts",
+                "PropertyPath": {
+                  "$type": "Comindware.Platform.Contracts.GlobalAlias[], Comindware.Platform.Contracts",
+                  "$values": [
+                    {
+                      "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                      "Type": "Attribute",
+                      "Owner": "Priemynarabotu",
+                      "Alias": "Kandidat"
+                    },
+                    {
+                      "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                      "Type": "Attribute",
+                      "Owner": "Kandidaty",
+                      "Alias": "FIO"
+                    }
+                  ]
+                },
+                "Type": "Property"
+              }
+            }
+          },
+          {
+            "$type": "Comindware.Platform.Contracts.PropertyMapKeyValueModel, Comindware.Platform.Contracts",
+            "Key": {
+              "$type": "Comindware.Platform.Contracts.ModificationActionModel, Comindware.Platform.Contracts",
+              "PropertyPath": {
+                "$type": "Comindware.Platform.Contracts.GlobalAlias[], Comindware.Platform.Contracts",
+                "$values": [
+                  {
+                    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                    "Type": "MessageTemplateProperty",
+                    "Owner": "Sozdaniepolzovatelya2",
+                    "Alias": "login"
+                  }
+                ]
+              },
+              "PropertyAction": "Replace"
+            },
+            "Value": {
+              "$type": "Comindware.Platform.Contracts.CalculationRuleModel, Comindware.Platform.Contracts",
+              "Type": "Calculation",
+              "Definition": {
+                "$type": "Comindware.Platform.Contracts.PropertyRuleDefinitionModel, Comindware.Platform.Contracts",
+                "PropertyPath": {
+                  "$type": "Comindware.Platform.Contracts.GlobalAlias[], Comindware.Platform.Contracts",
+                  "$values": [
+                    {
+                      "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                      "Type": "Attribute",
+                      "Owner": "Priemynarabotu",
+                      "Alias": "Kandidat"
+                    },
+                    {
+                      "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                      "Type": "Attribute",
+                      "Owner": "Kandidaty",
+                      "Alias": "Login"
+                    }
+                  ]
+                },
+                "Type": "Property"
+              }
+            }
+          }
+        ]
+      },
+      "Type": "MakeMessage"
+    },
+    "ReturnMappings": {
+      "$type": "Comindware.Platform.Contracts.MakeObjectRuleModel, Comindware.Platform.Contracts",
+      "RecordTemplate": {
+        "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+        "Type": "Undefined"
+      },
+      "Type": "MakeObject"
+    }
+  },
+  "FormAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "ProcessForm",
+    "Owner": "Podgotovkazayavleniyanapriyom"
+  },
+  "BehaviourState": "Undefined",
+  "Title": "Создание пользователя",
+  "IsTitleSet": false,
+  "Position": {
+    "$type": "Comindware.Platform.Contracts.VectorModel, Comindware.Platform.Contracts",
+    "X": 420.0,
+    "Y": 165.0
+  },
+  "Size": {
+    "$type": "Comindware.Platform.Contracts.DimensionsModel, Comindware.Platform.Contracts",
+    "Width": 120.0,
+    "Height": 70.0
+  },
+  "Owner": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Activity",
+    "Owner": "Podgotovkazayavleniyanapriyom",
+    "Alias": "lane1"
+  },
+  "OwnerEmbeddedProcessActivityAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Undefined"
+  },
+  "MountedOnAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Undefined"
+  },
+  "Type": "Task"
+}

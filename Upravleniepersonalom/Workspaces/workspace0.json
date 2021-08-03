@@ -1,0 +1,229 @@
+{
+  "$type": "Comindware.Platform.Contracts.RoleWorkspaceConfigurationModel, Comindware.Platform.Contracts",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "RoleWorkspace",
+    "Alias": "workspace0"
+  },
+  "Name": "Бизнес-администрирование",
+  "Roles": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias[], Comindware.Platform.Contracts",
+    "$values": [
+      {
+        "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+        "Type": "RoleConfiguration",
+        "Alias": "Biznesadministrator"
+      }
+    ]
+  },
+  "NavigationItems": {
+    "$type": "Comindware.Platform.Contracts.NavigationItemModel[], Comindware.Platform.Contracts",
+    "$values": [
+      {
+        "$type": "Comindware.Platform.Contracts.NavigationItemModel, Comindware.Platform.Contracts",
+        "Name": "Мои задачи",
+        "Priority": 20,
+        "ItemType": "MyTasks",
+        "IconClass": "tasks",
+        "Severity": "None"
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.NavigationItemModel, Comindware.Platform.Contracts",
+        "Name": "Разделитель",
+        "Priority": 19,
+        "ItemType": "Splitter",
+        "Severity": "None"
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.NavigationItemModel, Comindware.Platform.Contracts",
+        "Name": "Сотрудники",
+        "Priority": 18,
+        "ItemType": "AccountTemplate",
+        "IconClass": "users",
+        "Target": "Sotrudniki9",
+        "Severity": "None"
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.NavigationItemModel, Comindware.Platform.Contracts",
+        "Name": "Разделитель",
+        "Priority": 17,
+        "ItemType": "Splitter",
+        "Severity": "None"
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.NavigationItemModel, Comindware.Platform.Contracts",
+        "Name": "Приемы на работу",
+        "Container": "Priemynarabotu",
+        "Priority": 16,
+        "ItemType": "RecordTemplateList",
+        "IconClass": "play-circle",
+        "Target": "defaultList",
+        "Severity": "None"
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.NavigationItemModel, Comindware.Platform.Contracts",
+        "Name": "Разделитель",
+        "Priority": 15,
+        "ItemType": "Splitter",
+        "Severity": "None"
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.NavigationItemModel, Comindware.Platform.Contracts",
+        "Name": "Подразделения",
+        "Priority": 14,
+        "ItemType": "RecordTemplate",
+        "IconClass": "building",
+        "Target": "Podrazdeleniya",
+        "Severity": "None"
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.NavigationItemModel, Comindware.Platform.Contracts",
+        "Name": "Разделитель",
+        "Priority": 13,
+        "ItemType": "Splitter",
+        "Severity": "None"
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.NavigationItemModel, Comindware.Platform.Contracts",
+        "Name": "Разделитель",
+        "Priority": 11,
+        "ItemType": "Splitter",
+        "Severity": "None"
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.NavigationItemModel, Comindware.Platform.Contracts",
+        "Name": "Разделитель",
+        "Priority": 9,
+        "ItemType": "Splitter",
+        "Severity": "None"
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.NavigationItemModel, Comindware.Platform.Contracts",
+        "Name": "Физические лица",
+        "Description": "Вакансии",
+        "Priority": 8,
+        "ItemType": "RecordTemplate",
+        "IconClass": "user-plus",
+        "Target": "Kandidaty",
+        "Severity": "None"
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.NavigationItemModel, Comindware.Platform.Contracts",
+        "Name": "Разделитель",
+        "Priority": 7,
+        "ItemType": "Splitter",
+        "Severity": "None"
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.NavigationItemModel, Comindware.Platform.Contracts",
+        "Name": "Отчеты",
+        "Description": "Отчеты",
+        "Priority": 6,
+        "ItemType": "DashboardPage",
+        "IconClass": "chart-area",
+        "Target": "Otchety",
+        "Severity": "None"
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.NavigationItemModel, Comindware.Platform.Contracts",
+        "Name": "Разделитель",
+        "Priority": 5,
+        "ItemType": "Splitter",
+        "Severity": "None"
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.NavigationItemModel, Comindware.Platform.Contracts",
+        "Name": "Справочная информация",
+        "Priority": 4,
+        "ItemType": "Group",
+        "IconClass": "question",
+        "Severity": "None",
+        "ChildrenItems": {
+          "$type": "Comindware.Platform.Contracts.NavigationItemModel[], Comindware.Platform.Contracts",
+          "$values": [
+            {
+              "$type": "Comindware.Platform.Contracts.NavigationItemModel, Comindware.Platform.Contracts",
+              "Name": "ФЛС",
+              "Description": "Приемы на работу",
+              "Priority": 5,
+              "ItemType": "RecordTemplate",
+              "IconClass": "hands-usd",
+              "Target": "FLS",
+              "Severity": "None"
+            },
+            {
+              "$type": "Comindware.Platform.Contracts.NavigationItemModel, Comindware.Platform.Contracts",
+              "Name": "Статусы приёма на работу",
+              "Description": "Приёмы на работу",
+              "Priority": 3,
+              "ItemType": "RecordTemplate",
+              "IconClass": "file-check",
+              "Target": "Statusypriyomanarabotu",
+              "Severity": "None"
+            },
+            {
+              "$type": "Comindware.Platform.Contracts.NavigationItemModel, Comindware.Platform.Contracts",
+              "Name": "Разделитель",
+              "Priority": 2,
+              "ItemType": "Splitter",
+              "Severity": "None"
+            },
+            {
+              "$type": "Comindware.Platform.Contracts.NavigationItemModel, Comindware.Platform.Contracts",
+              "Name": "Справочник решений",
+              "Priority": 1,
+              "ItemType": "RecordTemplate",
+              "IconClass": "vote-yea",
+              "Target": "Spravochnikresheniy5",
+              "Severity": "None"
+            }
+          ]
+        }
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.NavigationItemModel, Comindware.Platform.Contracts",
+        "Name": "Разделитель",
+        "Priority": 3,
+        "ItemType": "Splitter",
+        "Severity": "None"
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.NavigationItemModel, Comindware.Platform.Contracts",
+        "Name": "Процессы",
+        "Priority": 2,
+        "ItemType": "Group",
+        "IconClass": "project-diagram",
+        "Severity": "None",
+        "ChildrenItems": {
+          "$type": "Comindware.Platform.Contracts.NavigationItemModel[], Comindware.Platform.Contracts",
+          "$values": [
+            {
+              "$type": "Comindware.Platform.Contracts.NavigationItemModel, Comindware.Platform.Contracts",
+              "Name": "Разделитель",
+              "Priority": 4,
+              "ItemType": "Splitter",
+              "Severity": "None"
+            },
+            {
+              "$type": "Comindware.Platform.Contracts.NavigationItemModel, Comindware.Platform.Contracts",
+              "Name": "Прием на работу",
+              "Description": "Приемы на работу",
+              "Priority": 1,
+              "ItemType": "ProcessTemplate",
+              "IconClass": "random",
+              "Target": "Priemnarabotu",
+              "Severity": "None"
+            }
+          ]
+        }
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.NavigationItemModel, Comindware.Platform.Contracts",
+        "Name": "Разделитель",
+        "Priority": 1,
+        "ItemType": "Splitter",
+        "Severity": "None"
+      }
+    ]
+  }
+}

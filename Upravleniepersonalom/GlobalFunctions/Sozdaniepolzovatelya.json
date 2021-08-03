@@ -1,0 +1,105 @@
+{
+  "$type": "Comindware.Platform.Contracts.GlobalFunctionModel, Comindware.Platform.Contracts",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "GlobalFunction",
+    "Alias": "Sozdaniepolzovatelya"
+  },
+  "Name": "Создание пользователя",
+  "InputMessageTypeGlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "MessageTemplate",
+    "Alias": "Sozdaniepolzovatelya2"
+  },
+  "ReturnMessageTypeGlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "MessageTemplate",
+    "Alias": "Sozdaniepolzovatelya_output"
+  },
+  "Definition": {
+    "$type": "Comindware.Platform.Contracts.GlobalScriptDefinitionModel, Comindware.Platform.Contracts",
+    "Script": {
+      "$type": "Comindware.Platform.Contracts.CSharpRuleDefinitionModel, Comindware.Platform.Contracts",
+      "EntryPoint": "Script",
+      "Code": "using System;\nusing System.Collections.Generic;\nusing System.Linq;\nusing Comindware.Platform.Api.Data;\n\n\n// имя класса \"Script\" и атрибуты (public, static, partial) нужно оставить\npublic static partial class Script\n{\n    // имя метода \"newUser\" нужно оставить\n    public static Dictionary<string, object> Sozdaniepolzovatelya(string email, string name, string login)\n    {\n        var newAccount = new Account() \n        {\n            IsActive = true,\n            IsSystemAdministrator = false,\n            IsDisabled = false,\n            Department = \"Office\",\n            Mbox = email,\n            FullName = name,\n            Username = login\n        };\n        var accountId = Api.Base.AccountService.Create(newAccount);\n        Api.Base.AccountService.SetAccountPassword(accountId, login);\n        Api.Base.AccountGroupService.IncludeMembers( \"group.12\", new List<string>(){ accountId });\n\n        var result = new Dictionary<string, object>();\n        result.Add(accountId, name);\n        return result;\n    }\n}",
+      "Type": "CSharpExpression"
+    },
+    "InputMapping": {
+      "$type": "Comindware.Platform.Contracts.MakeArrayRuleModel, Comindware.Platform.Contracts",
+      "Item": {
+        "$type": "Comindware.Platform.Contracts.CalculationRuleModel[], Comindware.Platform.Contracts",
+        "$values": [
+          {
+            "$type": "Comindware.Platform.Contracts.CalculationRuleModel, Comindware.Platform.Contracts",
+            "Type": "Calculation",
+            "Definition": {
+              "$type": "Comindware.Platform.Contracts.PropertyRuleDefinitionModel, Comindware.Platform.Contracts",
+              "PropertyPath": {
+                "$type": "Comindware.Platform.Contracts.GlobalAlias[], Comindware.Platform.Contracts",
+                "$values": [
+                  {
+                    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                    "Type": "MessageTemplateProperty",
+                    "Owner": "Sozdaniepolzovatelya2",
+                    "Alias": "email"
+                  }
+                ]
+              },
+              "Type": "Property"
+            }
+          },
+          {
+            "$type": "Comindware.Platform.Contracts.CalculationRuleModel, Comindware.Platform.Contracts",
+            "Type": "Calculation",
+            "Definition": {
+              "$type": "Comindware.Platform.Contracts.PropertyRuleDefinitionModel, Comindware.Platform.Contracts",
+              "PropertyPath": {
+                "$type": "Comindware.Platform.Contracts.GlobalAlias[], Comindware.Platform.Contracts",
+                "$values": [
+                  {
+                    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                    "Type": "MessageTemplateProperty",
+                    "Owner": "Sozdaniepolzovatelya2",
+                    "Alias": "name"
+                  }
+                ]
+              },
+              "Type": "Property"
+            }
+          },
+          {
+            "$type": "Comindware.Platform.Contracts.CalculationRuleModel, Comindware.Platform.Contracts",
+            "Type": "Calculation",
+            "Definition": {
+              "$type": "Comindware.Platform.Contracts.PropertyRuleDefinitionModel, Comindware.Platform.Contracts",
+              "PropertyPath": {
+                "$type": "Comindware.Platform.Contracts.GlobalAlias[], Comindware.Platform.Contracts",
+                "$values": [
+                  {
+                    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                    "Type": "MessageTemplateProperty",
+                    "Owner": "Sozdaniepolzovatelya2",
+                    "Alias": "login"
+                  }
+                ]
+              },
+              "Type": "Property"
+            }
+          }
+        ]
+      },
+      "Type": "MakeArray"
+    },
+    "ReturnMapping": {
+      "$type": "Comindware.Platform.Contracts.MakeMessageRuleModel, Comindware.Platform.Contracts",
+      "MessageType": {
+        "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+        "Type": "MessageTemplate",
+        "Alias": "Sozdaniepolzovatelya_output"
+      },
+      "ContextObject": "message",
+      "Type": "MakeMessage"
+    },
+    "Type": "Script"
+  }
+}

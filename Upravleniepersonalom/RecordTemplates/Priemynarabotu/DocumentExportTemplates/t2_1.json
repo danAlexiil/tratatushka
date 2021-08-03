@@ -1,0 +1,24 @@
+{
+  "$type": "Comindware.Platform.Contracts.DocumentExportTemplateModel, Comindware.Platform.Contracts",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "ExportTemplate",
+    "Owner": "Priemynarabotu",
+    "Alias": "t2_1"
+  },
+  "Name": "t2_1",
+  "ExportSourceTemplate": {
+    "$type": "Comindware.Platform.Contracts.ExportSourceTemplateFromDocument, Comindware.Platform.Contracts",
+    "Type": "Document",
+    "FileName": "ШАБЛОН Личной карточки работника Т-2.docx",
+    "FileType": "Word",
+    "StreamId": "cmw.xmlns:.stream:///.9f488eab-e02b-436e-b3eb-0b89eb6daac7"
+  },
+  "OutputFileNameTemplate": {
+    "$type": "Comindware.Platform.Contracts.OutputFileNameTemplateFromRule, Comindware.Platform.Contracts",
+    "Type": "Rule",
+    "RuleId": "rule.14",
+    "Expression": "FORMAT(\"{0}_{1:yyyy-MM-dd}_Личная_карточка_работника_Т2\", LIST(CONCAT(LIST($KandidatRef->Familiya, \"_\", $KandidatRef->Imya, \"_\", $KandidatRef->Otchestvo)), NOW()))"
+  },
+  "ExportAsPdf": false
+}

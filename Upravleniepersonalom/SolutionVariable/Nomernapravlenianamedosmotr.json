@@ -1,0 +1,11 @@
+{
+  "$type": "Comindware.Platform.Contracts.GlobalVariableModel, Comindware.Platform.Contracts",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "GlobalVariable",
+    "Alias": "Nomernapravlenianamedosmotr"
+  },
+  "Name": "Номер направления на медосмотр",
+  "VariableType": "Decimal",
+  "Value": 1.0
+}

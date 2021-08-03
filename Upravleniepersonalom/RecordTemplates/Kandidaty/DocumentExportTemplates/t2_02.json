@@ -1,0 +1,23 @@
+{
+  "$type": "Comindware.Platform.Contracts.DocumentExportTemplateModel, Comindware.Platform.Contracts",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "ExportTemplate",
+    "Owner": "Kandidaty",
+    "Alias": "t2_02"
+  },
+  "Name": "t2_02",
+  "ExportSourceTemplate": {
+    "$type": "Comindware.Platform.Contracts.ExportSourceTemplateFromDocument, Comindware.Platform.Contracts",
+    "Type": "Document",
+    "FileName": "ШАБЛОН Личной карточки работника Т-2.docx",
+    "FileType": "Word",
+    "StreamId": "cmw.xmlns:.stream:///.278299dc-4bfc-4037-933b-b0528d4b5a48"
+  },
+  "OutputFileNameTemplate": {
+    "$type": "Comindware.Platform.Contracts.OutputFileNameTemplateFromValue, Comindware.Platform.Contracts",
+    "Type": "Value",
+    "Value": "Личная карточка работника Т2"
+  },
+  "ExportAsPdf": false
+}

@@ -1,0 +1,124 @@
+{
+  "$type": "Comindware.Platform.Contracts.FormModel, Comindware.Platform.Contracts",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Form",
+    "Owner": "Priemynarabotu",
+    "Alias": "form64586"
+  },
+  "Type": "PublicForm",
+  "IsDefault": false,
+  "Root": {
+    "$type": "Comindware.Platform.Contracts.VerticalLayoutModel, Comindware.Platform.Contracts",
+    "Rows": {
+      "$type": "System.Collections.Generic.List`1[[Comindware.Platform.Contracts.FormComponentModel, Comindware.Platform.Contracts]], mscorlib",
+      "$values": [
+        {
+          "$type": "Comindware.Platform.Contracts.StaticContentModel, Comindware.Platform.Contracts",
+          "Content": {
+            "$type": "Comindware.Platform.Contracts.LocalizedTextModel, Comindware.Platform.Contracts",
+            "En": "<p>Вам необходимо пройти очные инструктажи в МФТИ&nbsp;в следующих службах:</p> <ul> <li>Отдел охраны труда (кабинет 514),</li> <li>Гражданской обороны и черезвычайных ситуаций (кабинет 520),</li> <li>Пожарной охраны (кабинет 520).</li>\n</ul> <p>Перечисленные службы работают в понедельник-пятницу, с 9:00 до 18:00 (обед с 12:00 до 13:00), и расположены в Аудиторном корпусе МФТИ по адресу Московская область, г. Долгопрудный, ул. Первомайская 7Б.</p> <p>&nbsp;</p> <p>Для прохода в укзанные корпуса свяжитесь пожалуйста заранее с тем сотрудником МФТИ, который помогает вам в трудоустройстве, и согласуйте дату и время вашего приезда в МФТИ. Он поможет вам при посещении указанных служб&nbsp;и&nbsp;отдела кадров.</p> <p>&nbsp;</p> <p>С собой вам будет необходимо принести оригиналы следующих документов:</p> <ul> <li>общегражданский&nbsp;паспорт;</li> <li>оригинал подписанного согласия на обработку персональных данных (от лица кандидата);</li> <li>документов об образовании;</li> <li>справку о прохождении медицинского осмотра;</li> <li>справки об отсутствии судимости;</li> <li>СНИЛС;</li> <li>при наличии трудового стажа - трудовой книжки или сведения о трудовой деятельности по форме СТД-ПФР;</li> <li>документы, связанные с воинским учетом.</li>\n</ul> <p>После прохождения инструкажей во всех перечисленных выше службах&nbsp;вы:</p> <ul> <li>посетите отдел кадров для предоставления оригиналов документов;</li> <li>подпишите со своей стороны заявление о приеме и трудовой договор.</li>\n</ul> <p>Скопируйте пожалуйста приведенную выше информацию для дальнейшего использования.</p> <p>&nbsp;</p> <p>В случае вашего отказа процесс будет прекращен.</p>\n",
+            "De": "<p>Вам необходимо пройти очные инструктажи в МФТИ&nbsp;в следующих службах:</p> <ul> <li>Отдел охраны труда (кабинет 514),</li> <li>Гражданской обороны и черезвычайных ситуаций (кабинет 520),</li> <li>Пожарной охраны (кабинет 520).</li>\n</ul> <p>Перечисленные службы работают в понедельник-пятницу, с 9:00 до 18:00 (обед с 12:00 до 13:00), и расположены в Аудиторном корпусе МФТИ по адресу Московская область, г. Долгопрудный, ул. Первомайская 7Б.</p> <p>&nbsp;</p> <p>Для прохода в укзанные корпуса свяжитесь пожалуйста заранее с тем сотрудником МФТИ, который помогает вам в трудоустройстве, и согласуйте дату и время вашего приезда в МФТИ. Он поможет вам при посещении указанных служб&nbsp;и&nbsp;отдела кадров.</p> <p>&nbsp;</p> <p>С собой вам будет необходимо принести оригиналы следующих документов:</p> <ul> <li>общегражданский&nbsp;паспорт;</li> <li>оригинал подписанного согласия на обработку персональных данных (от лица кандидата);</li> <li>документов об образовании;</li> <li>справку о прохождении медицинского осмотра;</li> <li>справки об отсутствии судимости;</li> <li>СНИЛС;</li> <li>при наличии трудового стажа - трудовой книжки или сведения о трудовой деятельности по форме СТД-ПФР;</li> <li>документы, связанные с воинским учетом.</li>\n</ul> <p>После прохождения инструкажей во всех перечисленных выше службах&nbsp;вы:</p> <ul> <li>посетите отдел кадров для предоставления оригиналов документов;</li> <li>подпишите со своей стороны заявление о приеме и трудовой договор.</li>\n</ul> <p>Скопируйте пожалуйста приведенную выше информацию для дальнейшего использования.</p> <p>&nbsp;</p> <p>В случае вашего отказа процесс будет прекращен.</p>\n",
+            "Ru": "<p>Вам необходимо пройти очные инструктажи в МФТИ&nbsp;в следующих службах:</p> <ul> <li>Отдел охраны труда (кабинет 514),</li> <li>Гражданской обороны и черезвычайных ситуаций (кабинет 520),</li> <li>Пожарной охраны (кабинет 520).</li>\n</ul> <p>Перечисленные службы работают в понедельник-пятницу, с 9:00 до 18:00 (обед с 12:00 до 13:00), и расположены в Аудиторном корпусе МФТИ по адресу Московская область, г. Долгопрудный, ул. Первомайская 7Б.</p> <p>&nbsp;</p> <p>Для прохода в укзанные корпуса свяжитесь пожалуйста заранее с тем сотрудником МФТИ, который помогает вам в трудоустройстве, и согласуйте дату и время вашего приезда в МФТИ. Он поможет вам при посещении указанных служб&nbsp;и&nbsp;отдела кадров.</p> <p>&nbsp;</p> <p>С собой вам будет необходимо принести оригиналы следующих документов:</p> <ul> <li>общегражданский&nbsp;паспорт;</li> <li>оригинал подписанного согласия на обработку персональных данных (от лица кандидата);</li> <li>документов об образовании;</li> <li>справку о прохождении медицинского осмотра;</li> <li>справки об отсутствии судимости;</li> <li>СНИЛС;</li> <li>при наличии трудового стажа - трудовой книжки или сведения о трудовой деятельности по форме СТД-ПФР;</li> <li>документы, связанные с воинским учетом.</li>\n</ul> <p>После прохождения инструкажей во всех перечисленных выше службах&nbsp;вы:</p> <ul> <li>посетите отдел кадров для предоставления оригиналов документов;</li> <li>подпишите со своей стороны заявление о приеме и трудовой договор.</li>\n</ul> <p>Скопируйте пожалуйста приведенную выше информацию для дальнейшего использования.</p> <p>&nbsp;</p> <p>В случае вашего отказа процесс будет прекращен.</p>\n"
+          },
+          "GlobalAlias": {
+            "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+            "Type": "FormComponent",
+            "Alias": "StaticContentComponent"
+          },
+          "AccessType": "Undefined",
+          "Width": 0,
+          "Type": "StaticContent"
+        },
+        {
+          "$type": "Comindware.Platform.Contracts.FieldComponentModel, Comindware.Platform.Contracts",
+          "Label": {
+            "$type": "Comindware.Platform.Contracts.LabelModel, Comindware.Platform.Contracts",
+            "Hidden": false,
+            "Alignment": "Top",
+            "Text": {
+              "$type": "Comindware.Platform.Contracts.LocalizedTextModel, Comindware.Platform.Contracts",
+              "En": "Выберите ответ",
+              "De": "Выберите ответ",
+              "Ru": "Выберите ответ"
+            }
+          },
+          "FieldType": "Boolean",
+          "Placeholder": {
+            "$type": "Comindware.Platform.Contracts.LocalizedTextModel, Comindware.Platform.Contracts"
+          },
+          "HelpText": {
+            "$type": "Comindware.Platform.Contracts.LocalizedTextModel, Comindware.Platform.Contracts"
+          },
+          "PropertyPath": {
+            "$type": "Comindware.Platform.Contracts.GlobalAlias[], Comindware.Platform.Contracts",
+            "$values": [
+              {
+                "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                "Type": "Attribute",
+                "Owner": "Priemynarabotu",
+                "Alias": "Oznakomlen"
+              }
+            ]
+          },
+          "TrueText": {
+            "$type": "Comindware.Platform.Contracts.LocalizedTextModel, Comindware.Platform.Contracts",
+            "En": "Да, я пройду указанные инструкажи",
+            "De": "Да, я пройду указанные инструкажи",
+            "Ru": "Да, я пройду указанные инструкажи"
+          },
+          "FalseText": {
+            "$type": "Comindware.Platform.Contracts.LocalizedTextModel, Comindware.Platform.Contracts",
+            "En": "Отказываюсь от прохождения инструктажей",
+            "De": "Отказываюсь от прохождения инструктажей",
+            "Ru": "Отказываюсь от прохождения инструктажей"
+          },
+          "UseTrueFalseText": true,
+          "EditorType": "Radio",
+          "CreationType": "None",
+          "RemovalType": "None",
+          "EditType": "None",
+          "ChildPropertyAlias": {
+            "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+            "Type": "Undefined"
+          },
+          "OrderPropertyAlias": {
+            "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+            "Type": "Undefined"
+          },
+          "NumberPropertyAlias": {
+            "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+            "Type": "Undefined"
+          },
+          "PrecedentPropertyAlias": {
+            "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+            "Type": "Undefined"
+          },
+          "SortingDirection": "Asc",
+          "PopupFormAlias": {
+            "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+            "Type": "Undefined"
+          },
+          "GlobalAlias": {
+            "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+            "Type": "FormComponent",
+            "Alias": "Oznakomlen"
+          },
+          "AccessType": "Required",
+          "Width": 0,
+          "Type": "FieldComponent"
+        }
+      ]
+    },
+    "GlobalAlias": {
+      "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+      "Type": "FormComponent",
+      "Alias": "root"
+    },
+    "AccessType": "Undefined",
+    "Width": 0,
+    "Type": "VerticalLayout"
+  },
+  "Name": "Форма-уведомление о необходимости прохождения инструктажей",
+  "Origination": "Undefined"
+}

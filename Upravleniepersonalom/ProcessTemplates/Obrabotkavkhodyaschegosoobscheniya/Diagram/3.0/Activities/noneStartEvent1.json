@@ -1,0 +1,212 @@
+{
+  "$type": "Comindware.Platform.Contracts.StartEventActivityModel, Comindware.Platform.Contracts",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Activity",
+    "Owner": "Obrabotkavkhodyaschegosoobscheniya",
+    "Alias": "noneStartEvent1"
+  },
+  "Form": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Undefined"
+  },
+  "Kind": "CatchingMessage",
+  "IsInterrupting": false,
+  "MessageDefinition": {
+    "$type": "Comindware.Platform.Contracts.MessageEventDefinitionModel, Comindware.Platform.Contracts",
+    "IsThrowing": false,
+    "MessageType": {
+      "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+      "Type": "MessageTemplate",
+      "Alias": "noneStartEvent1801e"
+    },
+    "MessageName": "Получаемое сообщение",
+    "ReturnMapping": {
+      "$type": "Comindware.Platform.Contracts.MakeObjectRuleModel, Comindware.Platform.Contracts",
+      "RecordTemplate": {
+        "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+        "Type": "Undefined"
+      },
+      "PropertyMap": {
+        "$type": "Comindware.Platform.Contracts.PropertyMapKeyValueModel[], Comindware.Platform.Contracts",
+        "$values": [
+          {
+            "$type": "Comindware.Platform.Contracts.PropertyMapKeyValueModel, Comindware.Platform.Contracts",
+            "Key": {
+              "$type": "Comindware.Platform.Contracts.ModificationActionModel, Comindware.Platform.Contracts",
+              "PropertyPath": {
+                "$type": "Comindware.Platform.Contracts.GlobalAlias[], Comindware.Platform.Contracts",
+                "$values": [
+                  {
+                    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                    "Type": "Attribute",
+                    "Owner": "Vkhodyaschiesoobscheniya",
+                    "Alias": "Email"
+                  }
+                ]
+              },
+              "PropertyAction": "Replace"
+            },
+            "Value": {
+              "$type": "Comindware.Platform.Contracts.CalculationRuleModel, Comindware.Platform.Contracts",
+              "Type": "Calculation",
+              "Definition": {
+                "$type": "Comindware.Platform.Contracts.PropertyRuleDefinitionModel, Comindware.Platform.Contracts",
+                "PropertyPath": {
+                  "$type": "Comindware.Platform.Contracts.GlobalAlias[], Comindware.Platform.Contracts",
+                  "$values": [
+                    {
+                      "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                      "Type": "MessageTemplateProperty",
+                      "Owner": "Soobschenieotkandidata",
+                      "Alias": "email"
+                    }
+                  ]
+                },
+                "Type": "Property"
+              }
+            }
+          },
+          {
+            "$type": "Comindware.Platform.Contracts.PropertyMapKeyValueModel, Comindware.Platform.Contracts",
+            "Key": {
+              "$type": "Comindware.Platform.Contracts.ModificationActionModel, Comindware.Platform.Contracts",
+              "PropertyPath": {
+                "$type": "Comindware.Platform.Contracts.GlobalAlias[], Comindware.Platform.Contracts",
+                "$values": [
+                  {
+                    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                    "Type": "Attribute",
+                    "Owner": "Vkhodyaschiesoobscheniya",
+                    "Alias": "Vlozheniya"
+                  }
+                ]
+              },
+              "PropertyAction": "Replace"
+            },
+            "Value": {
+              "$type": "Comindware.Platform.Contracts.CalculationRuleModel, Comindware.Platform.Contracts",
+              "Type": "Calculation",
+              "Definition": {
+                "$type": "Comindware.Platform.Contracts.PropertyRuleDefinitionModel, Comindware.Platform.Contracts",
+                "PropertyPath": {
+                  "$type": "Comindware.Platform.Contracts.GlobalAlias[], Comindware.Platform.Contracts",
+                  "$values": [
+                    {
+                      "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                      "Type": "MessageTemplateProperty",
+                      "Owner": "Soobschenieotkandidata",
+                      "Alias": "attachments"
+                    }
+                  ]
+                },
+                "Type": "Property"
+              }
+            }
+          },
+          {
+            "$type": "Comindware.Platform.Contracts.PropertyMapKeyValueModel, Comindware.Platform.Contracts",
+            "Key": {
+              "$type": "Comindware.Platform.Contracts.ModificationActionModel, Comindware.Platform.Contracts",
+              "PropertyPath": {
+                "$type": "Comindware.Platform.Contracts.GlobalAlias[], Comindware.Platform.Contracts",
+                "$values": [
+                  {
+                    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                    "Type": "Attribute",
+                    "Owner": "Vkhodyaschiesoobscheniya",
+                    "Alias": "Soobschenie"
+                  }
+                ]
+              },
+              "PropertyAction": "Replace"
+            },
+            "Value": {
+              "$type": "Comindware.Platform.Contracts.CalculationRuleModel, Comindware.Platform.Contracts",
+              "Type": "Calculation",
+              "Definition": {
+                "$type": "Comindware.Platform.Contracts.PropertyRuleDefinitionModel, Comindware.Platform.Contracts",
+                "PropertyPath": {
+                  "$type": "Comindware.Platform.Contracts.GlobalAlias[], Comindware.Platform.Contracts",
+                  "$values": [
+                    {
+                      "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                      "Type": "MessageTemplateProperty",
+                      "Owner": "Soobschenieotkandidata",
+                      "Alias": "body"
+                    }
+                  ]
+                },
+                "Type": "Property"
+              }
+            }
+          },
+          {
+            "$type": "Comindware.Platform.Contracts.PropertyMapKeyValueModel, Comindware.Platform.Contracts",
+            "Key": {
+              "$type": "Comindware.Platform.Contracts.ModificationActionModel, Comindware.Platform.Contracts",
+              "PropertyPath": {
+                "$type": "Comindware.Platform.Contracts.GlobalAlias[], Comindware.Platform.Contracts",
+                "$values": [
+                  {
+                    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                    "Type": "Attribute",
+                    "Owner": "Vkhodyaschiesoobscheniya",
+                    "Alias": "Tema"
+                  }
+                ]
+              },
+              "PropertyAction": "Replace"
+            },
+            "Value": {
+              "$type": "Comindware.Platform.Contracts.CalculationRuleModel, Comindware.Platform.Contracts",
+              "Type": "Calculation",
+              "Definition": {
+                "$type": "Comindware.Platform.Contracts.PropertyRuleDefinitionModel, Comindware.Platform.Contracts",
+                "PropertyPath": {
+                  "$type": "Comindware.Platform.Contracts.GlobalAlias[], Comindware.Platform.Contracts",
+                  "$values": [
+                    {
+                      "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                      "Type": "MessageTemplateProperty",
+                      "Owner": "Soobschenieotkandidata",
+                      "Alias": "title"
+                    }
+                  ]
+                },
+                "Type": "Property"
+              }
+            }
+          }
+        ]
+      },
+      "Type": "MakeObject"
+    }
+  },
+  "BehaviourState": "Undefined",
+  "Title": "Новое сообщение",
+  "IsTitleSet": false,
+  "Position": {
+    "$type": "Comindware.Platform.Contracts.VectorModel, Comindware.Platform.Contracts",
+    "X": 360.0,
+    "Y": 100.0
+  },
+  "Size": {
+    "$type": "Comindware.Platform.Contracts.DimensionsModel, Comindware.Platform.Contracts",
+    "Width": 40.0,
+    "Height": 40.0
+  },
+  "Owner": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Undefined"
+  },
+  "OwnerEmbeddedProcessActivityAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Undefined"
+  },
+  "MountedOnAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Undefined"
+  },
+  "Type": "StartEvent"
+}

@@ -1,0 +1,23 @@
+{
+  "$type": "Comindware.Platform.Contracts.DocumentExportTemplateModel, Comindware.Platform.Contracts",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "ExportTemplate",
+    "Owner": "Priemynarabotu",
+    "Alias": "zayavlenie_0"
+  },
+  "Name": "zayavlenie_0",
+  "ExportSourceTemplate": {
+    "$type": "Comindware.Platform.Contracts.ExportSourceTemplateFromDocument, Comindware.Platform.Contracts",
+    "Type": "Document",
+    "FileName": "ШАБЛОН Заявление о приеме.doc",
+    "FileType": "Word",
+    "StreamId": "cmw.xmlns:.stream:///.e1684ebb-aa11-475f-aa72-1556fd7b62cc"
+  },
+  "OutputFileNameTemplate": {
+    "$type": "Comindware.Platform.Contracts.OutputFileNameTemplateFromValue, Comindware.Platform.Contracts",
+    "Type": "Value",
+    "Value": "Заявление на приём"
+  },
+  "ExportAsPdf": false
+}

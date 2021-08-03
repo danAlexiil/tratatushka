@@ -1,0 +1,24 @@
+{
+  "$type": "Comindware.Platform.Contracts.DocumentExportTemplateModel, Comindware.Platform.Contracts",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "ExportTemplate",
+    "Owner": "Priemynarabotu",
+    "Alias": "agreement"
+  },
+  "Name": "agreement",
+  "ExportSourceTemplate": {
+    "$type": "Comindware.Platform.Contracts.ExportSourceTemplateFromDocument, Comindware.Platform.Contracts",
+    "Type": "Document",
+    "FileName": "WA - ШАБЛОН Трудового договора по основному месту работы (для портала НИЧ) 2021-07-13.docx",
+    "FileType": "Word",
+    "StreamId": "cmw.xmlns:.stream:///.bc86fe27-662f-4109-8697-b23b889b139d"
+  },
+  "OutputFileNameTemplate": {
+    "$type": "Comindware.Platform.Contracts.OutputFileNameTemplateFromRule, Comindware.Platform.Contracts",
+    "Type": "Rule",
+    "RuleId": "rule.16",
+    "Expression": "FORMAT(\"{0}_{1:yyyy-MM-dd}_Трудовой_договор_основное_место_работы_НИЧ\", LIST(CONCAT(LIST($KandidatRef->Familiya, \"_\", $KandidatRef->Imya, \"_\", $KandidatRef->Otchestvo)), NOW()))"
+  },
+  "ExportAsPdf": false
+}

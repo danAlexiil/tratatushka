@@ -1,0 +1,50 @@
+{
+  "$type": "Comindware.Platform.Contracts.ToolbarModel, Comindware.Platform.Contracts",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Toolbar",
+    "Owner": "Statusypriyomanarabotu",
+    "Alias": "defaultListToolbar"
+  },
+  "Name": "Панель инструментов для списков",
+  "IsDefaultForLists": true,
+  "IsDefaultForForms": false,
+  "IsDefaultForProcess": false,
+  "IsDefaultForProcessDesigner": false,
+  "IsDefaultForTaskLists": false,
+  "Items": {
+    "$type": "System.Collections.Generic.List`1[[Comindware.Platform.Contracts.ToolbarItemModel, Comindware.Platform.Contracts]], mscorlib",
+    "$values": [
+      {
+        "$type": "Comindware.Platform.Contracts.ToolbarItemModel, Comindware.Platform.Contracts",
+        "Action": {
+          "$type": "System.Nullable`1[[Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts]], mscorlib",
+          "Type": "UserCommand",
+          "Owner": "Statusypriyomanarabotu",
+          "Alias": "create"
+        },
+        "Name": "Создать",
+        "Order": 0,
+        "Type": "Action",
+        "IconType": "Undefined",
+        "Severity": "Low"
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.ToolbarItemModel, Comindware.Platform.Contracts",
+        "Action": {
+          "$type": "System.Nullable`1[[Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts]], mscorlib",
+          "Type": "UserCommand",
+          "Owner": "Statusypriyomanarabotu",
+          "Alias": "Eksportstatusovpriemanarabotu"
+        },
+        "Name": "Экспорт статусов приема на работу",
+        "Description": "Экспорт статусов приема на работу",
+        "Order": 1,
+        "Type": "Action",
+        "IconType": "Undefined",
+        "IconClass": "align-justify",
+        "Severity": "Major"
+      }
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "$type": "Comindware.Platform.Contracts.UserCommandConfigurationModel, Comindware.Platform.Contracts",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "UserCommand",
+    "Owner": "Kandidaty",
+    "Alias": "t4_02"
+  },
+  "Name": "Скачать Учетную карточку научного, научно-педагогического работника Т-4 ",
+  "IsSystem": false,
+  "IsDisabled": false,
+  "IsPrepare": false,
+  "SkipValidation": true,
+  "Context": "Record",
+  "Multiplicity": "OneByOne",
+  "Kind": "ExportObject",
+  "ResultType": "File",
+  "RelatedEntityGlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "ExportTemplate",
+    "Owner": "Kandidaty",
+    "Alias": "t4_02"
+  },
+  "LockStateChangeType": "Undefined",
+  "LockStateVisibilityType": "Undefined"
+}

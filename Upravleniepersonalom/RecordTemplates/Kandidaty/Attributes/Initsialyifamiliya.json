@@ -1,0 +1,29 @@
+{
+  "$type": "Comindware.Platform.Contracts.AttributeModel, Comindware.Platform.Contracts",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Attribute",
+    "Owner": "Kandidaty",
+    "Alias": "Initsialyifamiliya"
+  },
+  "Type": "String",
+  "Format": "PlainText",
+  "Name": "Инициалы и фамилия",
+  "IsSystem": false,
+  "IsDisabled": false,
+  "IsUnique": false,
+  "IsIndexed": false,
+  "IsTracked": false,
+  "IsMultiValue": false,
+  "IsTitle": false,
+  "IsMandatory": false,
+  "IsOwnership": false,
+  "IsCalculated": true,
+  "Expression": "FORMAT(\n    \"{0}.{1}. {2}\"\n    ,\n    LIST(\n        SUBSTRING(\n            $Imya,\n            0,\n            1),\n        SUBSTRING(\n            $Otchestvo,\n            0,\n            1),\n\t\t$Familiya))",
+  "InstanceGlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Undefined"
+  },
+  "ImageColorType": "Original",
+  "ImagePreserveAspectRatio": false
+}

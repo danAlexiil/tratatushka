@@ -1,0 +1,39 @@
+{
+  "$type": "Comindware.Platform.Contracts.UserCommandConfigurationModel, Comindware.Platform.Contracts",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "UserCommand",
+    "Owner": "Priemynarabotu",
+    "Alias": "Vernutsyakvyborurukovoditelyaproektatemy"
+  },
+  "Name": "Вернуться к выбору руководителя проекта / темы",
+  "Description": "Запускает триггер для очистки логических значений, связанных с руководителем проекта / темы",
+  "IsSystem": false,
+  "IsDisabled": false,
+  "IsPrepare": false,
+  "SkipValidation": true,
+  "Context": "Record",
+  "Multiplicity": "OneByOne",
+  "Kind": "Edit",
+  "ResultType": "DataChange",
+  "ConfirmationModelConfiguration": {
+    "$type": "Comindware.Platform.Contracts.UserCommandConfirmationModel, Comindware.Platform.Contracts",
+    "Form": {
+      "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+      "Type": "Form",
+      "Owner": "Priemynarabotu",
+      "Alias": "Vernutsyakvyborurukovoditelyaproektatemy"
+    },
+    "Template": {
+      "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+      "Type": "MessageTemplate",
+      "Alias": "Vernutsyakvyborurukovoditelyaproektatemyd253"
+    }
+  },
+  "RelatedEntityGlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Undefined"
+  },
+  "LockStateChangeType": "Undefined",
+  "LockStateVisibilityType": "VisibleOnLock"
+}

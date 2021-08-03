@@ -1,0 +1,30 @@
+{
+  "$type": "Comindware.Platform.Contracts.AttributeModel, Comindware.Platform.Contracts",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Attribute",
+    "Owner": "Priemynarabotu",
+    "Alias": "RukPrTinitsialyfamiliya"
+  },
+  "Type": "String",
+  "Format": "PlainText",
+  "Name": "РукПрТинициалыфамилия",
+  "Description": "Инициалы и фамилия руководителя проекта / темы для выходных документов и согласований",
+  "IsSystem": false,
+  "IsDisabled": false,
+  "IsUnique": false,
+  "IsIndexed": false,
+  "IsTracked": false,
+  "IsMultiValue": false,
+  "IsTitle": false,
+  "IsMandatory": false,
+  "IsOwnership": false,
+  "IsCalculated": true,
+  "Expression": "@prefix w3string: <http://www.w3.org/2000/10/swap/string#>.\n@prefix cmwmath: <http://comindware.com/logics/math#>.\n@prefix object: <http://comindware.com/ontology/object#>.\n@prefix cmwstring: <http://comindware.com/logics/string#>.\n\n{\n   (\"Priemynarabotu\" \"RukPrTfio\") object:findProperty ?RukPrTfioProp.\n\n    ?item ?RukPrTfioProp ?fioStringVal.\n\t?fioStringVal cmwstring:length ?fioLengthValue.\n\t?spaceChar == \" \".\n\n\t(?fioStringVal ?spaceChar 0) cmwstring:indexOf ?surnameEndVal.\n\t(?fioStringVal 0 ?surnameEndVal) cmwstring:substring ?surnameStringVal.\n\n\t(?surnameEndVal 1) cmwmath:sum ?nameMidnameBeginVal.\n\t(?fioStringVal ?nameMidnameBeginVal) cmwstring:substring ?nameMidnameStringVal.\n\t(?nameMidnameStringVal 0 1) cmwstring:substring ?nameNStringVal.\n\t(?nameMidnameStringVal ?spaceChar 0) cmwstring:indexOf ?nameEndVal.\n\n\t(?nameEndVal 1) cmwmath:sum ?MidnameBeginVal.\n    (?nameMidnameStringVal ?MidnameBeginVal) cmwstring:substring ?middleNameStringVal.\n\t(?middleNameStringVal 0 1) cmwstring:substring ?middleNStringVal.\n\n    (\"{0}.{1}. {2}\" ?nameNStringVal ?middleNStringVal ?surnameStringVal) w3string:format ?outValue.\n\n\t?value == ?outValue.\n\n}",
+  "InstanceGlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Undefined"
+  },
+  "ImageColorType": "Original",
+  "ImagePreserveAspectRatio": false
+}

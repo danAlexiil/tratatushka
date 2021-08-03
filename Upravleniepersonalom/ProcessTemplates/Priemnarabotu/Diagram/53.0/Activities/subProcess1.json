@@ -1,0 +1,121 @@
+{
+  "$type": "Comindware.Platform.Contracts.SubProcessActivityModel, Comindware.Platform.Contracts",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Activity",
+    "Owner": "Priemnarabotu",
+    "Alias": "subProcess1"
+  },
+  "ProcessTemplateAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "ProcessTemplate",
+    "Alias": "Proverkadokumentov"
+  },
+  "Loop": {
+    "$type": "Comindware.Platform.Contracts.LoopModel, Comindware.Platform.Contracts",
+    "Kind": "ForEach",
+    "LoopExecutionOrder": "Parallel",
+    "Expression": "$id",
+    "TargetTemplate": {
+      "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+      "Type": "Undefined"
+    }
+  },
+  "LoopAdapter": {
+    "$type": "Comindware.Platform.Contracts.SubProcessLoopAdapterModel, Comindware.Platform.Contracts",
+    "ModificationAction": {
+      "$type": "Comindware.Platform.Contracts.ModificationActionModel, Comindware.Platform.Contracts",
+      "PropertyPath": {
+        "$type": "Comindware.Platform.Contracts.GlobalAlias[], Comindware.Platform.Contracts",
+        "$values": [
+          {
+            "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+            "Type": "Attribute",
+            "Alias": "id"
+          }
+        ]
+      },
+      "PropertyAction": "Replace"
+    }
+  },
+  "Definition": {
+    "$type": "Comindware.Platform.Contracts.SubProcessDefinitionModel, Comindware.Platform.Contracts",
+    "InputMapping": {
+      "$type": "Comindware.Platform.Contracts.MakeObjectRuleModel, Comindware.Platform.Contracts",
+      "RecordTemplate": {
+        "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+        "Type": "Undefined"
+      },
+      "Type": "MakeObject"
+    },
+    "ReturnMapping": {
+      "$type": "Comindware.Platform.Contracts.MakeObjectRuleModel, Comindware.Platform.Contracts",
+      "RecordTemplate": {
+        "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+        "Type": "Undefined"
+      },
+      "Type": "MakeObject"
+    },
+    "ProcessObjectStrategy": "Undefined",
+    "ProcessRelation": "Undefined"
+  },
+  "BehaviourState": "Undefined",
+  "AdvancedConfiguration": true,
+  "Title": "Проверка документов",
+  "IsTitleSet": false,
+  "Position": {
+    "$type": "Comindware.Platform.Contracts.VectorModel, Comindware.Platform.Contracts",
+    "X": 805.0,
+    "Y": 270.0
+  },
+  "Size": {
+    "$type": "Comindware.Platform.Contracts.DimensionsModel, Comindware.Platform.Contracts",
+    "Width": 150.0,
+    "Height": 100.0
+  },
+  "Owner": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Activity",
+    "Owner": "Priemnarabotu",
+    "Alias": "pool1"
+  },
+  "OwnerEmbeddedProcessActivityAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Undefined"
+  },
+  "MountedOnAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Undefined"
+  },
+  "Type": "SubProcess",
+  "OnExitRules": {
+    "$type": "Comindware.Platform.Contracts.RuleModel[], Comindware.Platform.Contracts",
+    "$values": [
+      {
+        "$type": "Comindware.Platform.Contracts.ModificationRuleModel, Comindware.Platform.Contracts",
+        "Action": {
+          "$type": "Comindware.Platform.Contracts.ModificationActionModel, Comindware.Platform.Contracts",
+          "PropertyPath": {
+            "$type": "Comindware.Platform.Contracts.GlobalAlias[], Comindware.Platform.Contracts",
+            "$values": [
+              {
+                "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                "Type": "Attribute",
+                "Owner": "Priemynarabotu",
+                "Alias": "Dataokonchaniyapodgotovkidokumentov"
+              }
+            ]
+          },
+          "PropertyAction": "Replace"
+        },
+        "Name": "Изменить значение",
+        "Type": "Modification",
+        "Definition": {
+          "$type": "Comindware.Platform.Contracts.ExpressionRuleDefinitionModel, Comindware.Platform.Contracts",
+          "Expression": "NOW()",
+          "Type": "Expression"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "$type": "Comindware.Platform.Contracts.TemplateInfoModel, Comindware.Platform.Contracts",
+  "Name": "Загрузка руководителей",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "ProcessTemplate",
+    "Alias": "DepartmentHeadsLoader"
+  },
+  "IsDisabled": false,
+  "RelatedTemplate": {
+    "$type": "System.Nullable`1[[Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts]], mscorlib",
+    "Type": "RecordTemplate",
+    "Alias": "DepartmentHeads"
+  },
+  "IsReferenceData": false,
+  "IsTransferable": false
+}

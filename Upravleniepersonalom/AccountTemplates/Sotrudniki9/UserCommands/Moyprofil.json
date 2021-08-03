@@ -1,0 +1,34 @@
+{
+  "$type": "Comindware.Platform.Contracts.UserCommandConfigurationModel, Comindware.Platform.Contracts",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "UserCommand",
+    "Owner": "Sotrudniki9",
+    "Alias": "Moyprofil"
+  },
+  "Name": "Мой профиль",
+  "IsSystem": false,
+  "IsDisabled": false,
+  "IsPrepare": false,
+  "SkipValidation": false,
+  "Context": "Record",
+  "Multiplicity": "OneByOne",
+  "Kind": "Script",
+  "ResultType": "DataChange",
+  "ScriptRule": {
+    "$type": "Comindware.Platform.Contracts.UserCommandScriptRuleModel, Comindware.Platform.Contracts",
+    "Type": "UserCommandScript",
+    "Definition": {
+      "$type": "Comindware.Platform.Contracts.CSharpRuleDefinitionModel, Comindware.Platform.Contracts",
+      "EntryPoint": "Script",
+      "Code": "using System;\nusing System.Collections.Generic;\nusing System.Linq;\nusing Comindware.Data.Entity;\nusing Comindware.TeamNetwork.Api.Data.UserCommands;\n\npublic class Script\n{\n\n    public static UserCommandResult Main(UserCommandContext userCommandContext, Comindware.Entities entities)\n    {\n        var result = new UserCommandResult()\n        {\n            Success = true,\n            ResultType = UserCommandResultType.Navigate,\n            NavigationResult = new UserCommandNavigationResult\n            {\n                ContainerId = \"aa.1\",\n                ObjectId = userCommandContext.CurrentUserId,\n                Context = ContextType.Record\n            }\n        };\n        return result;\n    }\n}",
+      "Type": "CSharpExpression"
+    }
+  },
+  "RelatedEntityGlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Undefined"
+  },
+  "LockStateChangeType": "Undefined",
+  "LockStateVisibilityType": "Undefined"
+}

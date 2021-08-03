@@ -1,0 +1,11 @@
+{
+  "$type": "Comindware.Platform.Contracts.GlobalVariableModel, Comindware.Platform.Contracts",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "GlobalVariable",
+    "Alias": "SOAP_CONFIG"
+  },
+  "Name": "SOAP_CONFIG",
+  "VariableType": "String",
+  "Value": "C:\\ProgramData\\Comindware\\Instances\\bpmn int\\Config\\soap_cfg.xml"
+}

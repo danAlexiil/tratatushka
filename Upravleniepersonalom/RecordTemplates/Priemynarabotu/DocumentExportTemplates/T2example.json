@@ -1,0 +1,23 @@
+{
+  "$type": "Comindware.Platform.Contracts.DocumentExportTemplateModel, Comindware.Platform.Contracts",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "ExportTemplate",
+    "Owner": "Priemynarabotu",
+    "Alias": "T2example"
+  },
+  "Name": "T2example",
+  "ExportSourceTemplate": {
+    "$type": "Comindware.Platform.Contracts.ExportSourceTemplateFromDocument, Comindware.Platform.Contracts",
+    "Type": "Document",
+    "FileName": "Образец заполнения личной карточки Т-2.xls",
+    "FileType": "Excel",
+    "StreamId": "cmw.xmlns:.stream:///.7eb0fdce-a2f2-43da-a7d6-5cb1d9ae8848"
+  },
+  "OutputFileNameTemplate": {
+    "$type": "Comindware.Platform.Contracts.OutputFileNameTemplateFromValue, Comindware.Platform.Contracts",
+    "Type": "Value",
+    "Value": "Пример заполнения Личной карточки работника (карточка Т2)"
+  },
+  "ExportAsPdf": false
+}

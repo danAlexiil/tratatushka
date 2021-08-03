@@ -1,0 +1,197 @@
+{
+  "$type": "Comindware.Platform.Contracts.SynchronizationConfigModel, Comindware.Platform.Contracts",
+  "Name": "Departments",
+  "OperationType": "Import",
+  "RecordTemplate": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "RecordTemplate",
+    "Alias": "Podrazdeleniya"
+  },
+  "ODataChannel": "OData",
+  "ExternalTemplate": "Catalog_Подразделения",
+  "ImportSettings": {
+    "$type": "Comindware.Platform.Contracts.ImportSettingsModel, Comindware.Platform.Contracts",
+    "PropertyTriggers": {
+      "$type": "System.Collections.Generic.List`1[[Comindware.Platform.Contracts.PropertyTriggerModel, Comindware.Platform.Contracts]], mscorlib",
+      "$values": [
+        {
+          "$type": "Comindware.Platform.Contracts.PropertyTriggerModel, Comindware.Platform.Contracts",
+          "Type": "Reference",
+          "ReferenceProperty": {
+            "$type": "Comindware.Platform.Contracts.InternalPropertyModel, Comindware.Platform.Contracts",
+            "Alias": {
+              "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+              "Type": "Attribute",
+              "Owner": "Podrazdeleniya",
+              "Alias": "Roditelskoepodrazdelenie"
+            },
+            "IsValid": true
+          },
+          "CompareProperties": {
+            "$type": "System.Collections.Generic.List`1[[Comindware.Platform.Contracts.PropertyTriggerPair, Comindware.Platform.Contracts]], mscorlib",
+            "$values": [
+              {
+                "$type": "Comindware.Platform.Contracts.PropertyTriggerPair, Comindware.Platform.Contracts",
+                "TargetProperty": {
+                  "$type": "Comindware.Platform.Contracts.InternalPropertyModel, Comindware.Platform.Contracts",
+                  "Alias": {
+                    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                    "Type": "Attribute",
+                    "Owner": "Podrazdeleniya",
+                    "Alias": "ID1S"
+                  },
+                  "IsValid": true
+                },
+                "SourceProperty": {
+                  "$type": "Comindware.Platform.Contracts.InternalPropertyModel, Comindware.Platform.Contracts",
+                  "Alias": {
+                    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                    "Type": "Attribute",
+                    "Owner": "Podrazdeleniya",
+                    "Alias": "ParentKey"
+                  },
+                  "IsValid": true
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Filter": "",
+    "TimePropertyValue": "00:00:00",
+    "RequestObjectsCount": 10000,
+    "Order": {
+      "$type": "System.Collections.Generic.List`1[[Comindware.Platform.Contracts.Order, Comindware.Platform.Contracts]], mscorlib",
+      "$values": []
+    }
+  },
+  "PropertyMap": {
+    "$type": "System.Collections.Generic.List`1[[Comindware.Platform.Contracts.PropertyMapModel, Comindware.Platform.Contracts]], mscorlib",
+    "$values": [
+      {
+        "$type": "Comindware.Platform.Contracts.PropertyMapModel, Comindware.Platform.Contracts",
+        "IsKey": false,
+        "ExternalProperty": {
+          "$type": "Comindware.Platform.Contracts.ExternalPropertyModel, Comindware.Platform.Contracts",
+          "Id": "КодПодразделенияДляСинхронизации",
+          "IsValid": true
+        },
+        "InternalProperty": {
+          "$type": "Comindware.Platform.Contracts.InternalPropertyModel, Comindware.Platform.Contracts",
+          "Alias": {
+            "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+            "Type": "Attribute",
+            "Owner": "Podrazdeleniya",
+            "Alias": "code"
+          },
+          "IsValid": true
+        }
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.PropertyMapModel, Comindware.Platform.Contracts",
+        "IsKey": true,
+        "ExternalProperty": {
+          "$type": "Comindware.Platform.Contracts.ExternalPropertyModel, Comindware.Platform.Contracts",
+          "Id": "Ref_Key",
+          "IsValid": true
+        },
+        "InternalProperty": {
+          "$type": "Comindware.Platform.Contracts.InternalPropertyModel, Comindware.Platform.Contracts",
+          "Alias": {
+            "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+            "Type": "Attribute",
+            "Owner": "Podrazdeleniya",
+            "Alias": "ID1S"
+          },
+          "IsValid": true
+        }
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.PropertyMapModel, Comindware.Platform.Contracts",
+        "IsKey": false,
+        "ExternalProperty": {
+          "$type": "Comindware.Platform.Contracts.ExternalPropertyModel, Comindware.Platform.Contracts",
+          "Id": "КурирующийПроректор_Key",
+          "IsValid": true
+        },
+        "InternalProperty": {
+          "$type": "Comindware.Platform.Contracts.InternalPropertyModel, Comindware.Platform.Contracts",
+          "Alias": {
+            "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+            "Type": "Attribute",
+            "Owner": "Podrazdeleniya",
+            "Alias": "Key_Kuriruyuschiyprorektor"
+          },
+          "IsValid": true
+        }
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.PropertyMapModel, Comindware.Platform.Contracts",
+        "IsKey": false,
+        "ExternalProperty": {
+          "$type": "Comindware.Platform.Contracts.ExternalPropertyModel, Comindware.Platform.Contracts",
+          "Id": "Code",
+          "IsValid": true
+        },
+        "InternalProperty": {
+          "$type": "Comindware.Platform.Contracts.InternalPropertyModel, Comindware.Platform.Contracts",
+          "Alias": {
+            "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+            "Type": "Attribute",
+            "Owner": "Podrazdeleniya",
+            "Alias": "Nomer"
+          },
+          "IsValid": true
+        }
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.PropertyMapModel, Comindware.Platform.Contracts",
+        "IsKey": false,
+        "ExternalProperty": {
+          "$type": "Comindware.Platform.Contracts.ExternalPropertyModel, Comindware.Platform.Contracts",
+          "Id": "Description",
+          "IsValid": true
+        },
+        "InternalProperty": {
+          "$type": "Comindware.Platform.Contracts.InternalPropertyModel, Comindware.Platform.Contracts",
+          "Alias": {
+            "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+            "Type": "Attribute",
+            "Owner": "Podrazdeleniya",
+            "Alias": "Nazvanie"
+          },
+          "IsValid": true
+        }
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.PropertyMapModel, Comindware.Platform.Contracts",
+        "IsKey": false,
+        "ExternalProperty": {
+          "$type": "Comindware.Platform.Contracts.ExternalPropertyModel, Comindware.Platform.Contracts",
+          "Id": "Parent_Key",
+          "IsValid": true
+        },
+        "InternalProperty": {
+          "$type": "Comindware.Platform.Contracts.InternalPropertyModel, Comindware.Platform.Contracts",
+          "Alias": {
+            "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+            "Type": "Attribute",
+            "Owner": "Podrazdeleniya",
+            "Alias": "ParentKey"
+          },
+          "IsValid": true
+        }
+      }
+    ]
+  },
+  "Schedule": {
+    "$type": "Comindware.Platform.Contracts.ScheduleConfigurationModel, Comindware.Platform.Contracts",
+    "Type": "Manual"
+  },
+  "DeleteConditionConfiguration": {
+    "$type": "Comindware.Platform.Contracts.DeleteConditionConfigurationModel, Comindware.Platform.Contracts",
+    "DeleteNonExistent": false
+  },
+  "ObjectFetchingStrategy": "All"
+}

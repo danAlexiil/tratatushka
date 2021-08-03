@@ -1,0 +1,18 @@
+{
+  "$type": "Comindware.Platform.Contracts.TemplateInfoModel, Comindware.Platform.Contracts",
+  "Name": "Обновить данные из 1С",
+  "Description": "Запуск процесса Импорт SOAP по расписанию",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "ProcessTemplate",
+    "Alias": "Obnovitdannyeiz1S"
+  },
+  "IsDisabled": false,
+  "RelatedTemplate": {
+    "$type": "System.Nullable`1[[Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts]], mscorlib",
+    "Type": "RecordTemplate",
+    "Alias": "ImportSoapData"
+  },
+  "IsReferenceData": false,
+  "IsTransferable": false
+}

@@ -1,0 +1,412 @@
+{
+  "$type": "Comindware.Platform.Contracts.GlobalFunctionModel, Comindware.Platform.Contracts",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "GlobalFunction",
+    "Alias": "Employee"
+  },
+  "Name": "EmployeeLoad",
+  "Description": "Загрузка сотрудника",
+  "InputMessageTypeGlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "MessageTemplate",
+    "Alias": "Employee_input"
+  },
+  "ReturnMessageTypeGlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "MessageTemplate",
+    "Alias": "Employee_output"
+  },
+  "Definition": {
+    "$type": "Comindware.Platform.Contracts.GlobalExternalServiceDefinitionModel, Comindware.Platform.Contracts",
+    "InputMapping": {
+      "$type": "Comindware.Platform.Contracts.MakeMessageRuleModel, Comindware.Platform.Contracts",
+      "MessageType": {
+        "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+        "Type": "MessageTemplate",
+        "Alias": "_HttpRequest"
+      },
+      "PropertyMap": {
+        "$type": "Comindware.Platform.Contracts.PropertyMapKeyValueModel[], Comindware.Platform.Contracts",
+        "$values": [
+          {
+            "$type": "Comindware.Platform.Contracts.PropertyMapKeyValueModel, Comindware.Platform.Contracts",
+            "Key": {
+              "$type": "Comindware.Platform.Contracts.ModificationActionModel, Comindware.Platform.Contracts",
+              "PropertyPath": {
+                "$type": "Comindware.Platform.Contracts.GlobalAlias[], Comindware.Platform.Contracts",
+                "$values": [
+                  {
+                    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                    "Type": "MessageTemplateProperty",
+                    "Owner": "_HttpRequest",
+                    "Alias": "authorization"
+                  }
+                ]
+              },
+              "PropertyAction": "Replace"
+            },
+            "Value": {
+              "$type": "Comindware.Platform.Contracts.MakeMessageRuleModel, Comindware.Platform.Contracts",
+              "MessageType": {
+                "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                "Type": "Undefined"
+              },
+              "PropertyMap": {
+                "$type": "Comindware.Platform.Contracts.PropertyMapKeyValueModel[], Comindware.Platform.Contracts",
+                "$values": [
+                  {
+                    "$type": "Comindware.Platform.Contracts.PropertyMapKeyValueModel, Comindware.Platform.Contracts",
+                    "Key": {
+                      "$type": "Comindware.Platform.Contracts.ModificationActionModel, Comindware.Platform.Contracts",
+                      "PropertyPath": {
+                        "$type": "Comindware.Platform.Contracts.GlobalAlias[], Comindware.Platform.Contracts",
+                        "$values": [
+                          {
+                            "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                            "Type": "MessageTemplateProperty",
+                            "Owner": "_HttpBasicAuthorization",
+                            "Alias": "password"
+                          }
+                        ]
+                      },
+                      "PropertyAction": "Replace"
+                    },
+                    "Value": {
+                      "$type": "Comindware.Platform.Contracts.CalculationRuleModel, Comindware.Platform.Contracts",
+                      "Type": "Calculation",
+                      "Definition": {
+                        "$type": "Comindware.Platform.Contracts.ApplyTemplateRuleDefinitionModel, Comindware.Platform.Contracts",
+                        "Template": "LJj5iWV",
+                        "Type": "ApplyTemplate"
+                      }
+                    }
+                  },
+                  {
+                    "$type": "Comindware.Platform.Contracts.PropertyMapKeyValueModel, Comindware.Platform.Contracts",
+                    "Key": {
+                      "$type": "Comindware.Platform.Contracts.ModificationActionModel, Comindware.Platform.Contracts",
+                      "PropertyPath": {
+                        "$type": "Comindware.Platform.Contracts.GlobalAlias[], Comindware.Platform.Contracts",
+                        "$values": [
+                          {
+                            "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                            "Type": "MessageTemplateProperty",
+                            "Owner": "_HttpBasicAuthorization",
+                            "Alias": "username"
+                          }
+                        ]
+                      },
+                      "PropertyAction": "Replace"
+                    },
+                    "Value": {
+                      "$type": "Comindware.Platform.Contracts.CalculationRuleModel, Comindware.Platform.Contracts",
+                      "Type": "Calculation",
+                      "Definition": {
+                        "$type": "Comindware.Platform.Contracts.ApplyTemplateRuleDefinitionModel, Comindware.Platform.Contracts",
+                        "Template": "WebServiceEmployWorkers",
+                        "Type": "ApplyTemplate"
+                      }
+                    }
+                  },
+                  {
+                    "$type": "Comindware.Platform.Contracts.PropertyMapKeyValueModel, Comindware.Platform.Contracts",
+                    "Key": {
+                      "$type": "Comindware.Platform.Contracts.ModificationActionModel, Comindware.Platform.Contracts",
+                      "PropertyPath": {
+                        "$type": "Comindware.Platform.Contracts.GlobalAlias[], Comindware.Platform.Contracts",
+                        "$values": [
+                          {
+                            "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                            "Type": "MessageTemplateProperty",
+                            "Owner": "_HttpRequest",
+                            "Alias": "authorization"
+                          }
+                        ]
+                      },
+                      "PropertyAction": "Replace"
+                    },
+                    "Value": {
+                      "$type": "Comindware.Platform.Contracts.CalculationRuleModel, Comindware.Platform.Contracts",
+                      "Type": "Calculation",
+                      "Definition": {
+                        "$type": "Comindware.Platform.Contracts.ValuesRuleDefinitionModel, Comindware.Platform.Contracts",
+                        "Values": {
+                          "$type": "System.Object[], mscorlib",
+                          "$values": [
+                            "cmw.message.type.HttpBasicAuthorization"
+                          ]
+                        },
+                        "Type": "Values"
+                      }
+                    }
+                  }
+                ]
+              },
+              "Type": "MakeMessage"
+            }
+          },
+          {
+            "$type": "Comindware.Platform.Contracts.PropertyMapKeyValueModel, Comindware.Platform.Contracts",
+            "Key": {
+              "$type": "Comindware.Platform.Contracts.ModificationActionModel, Comindware.Platform.Contracts",
+              "PropertyPath": {
+                "$type": "Comindware.Platform.Contracts.GlobalAlias[], Comindware.Platform.Contracts",
+                "$values": [
+                  {
+                    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                    "Type": "MessageTemplateProperty",
+                    "Owner": "_HttpRequest",
+                    "Alias": "body"
+                  }
+                ]
+              },
+              "PropertyAction": "Replace"
+            },
+            "Value": {
+              "$type": "Comindware.Platform.Contracts.CalculationRuleModel, Comindware.Platform.Contracts",
+              "Type": "Calculation",
+              "Definition": {
+                "$type": "Comindware.Platform.Contracts.ApplyTemplateRuleDefinitionModel, Comindware.Platform.Contracts",
+                "Template": "<soap:Envelope xmlns:soap=\"http://www.w3.org/2003/05/soap-envelope\" xmlns:mfti=\"MFTI.ru\">\n   <soap:Header/>\n   <soap:Body>\n      <mfti:GetIndividual>\n         <mfti:individualId>31033</mfti:individualId>\n         <mfti:dataBlocks>Individual.Work</mfti:dataBlocks>\n      </mfti:GetIndividual>\n   </soap:Body>\n</soap:Envelope>",
+                "Type": "ApplyTemplate"
+              }
+            }
+          },
+          {
+            "$type": "Comindware.Platform.Contracts.PropertyMapKeyValueModel, Comindware.Platform.Contracts",
+            "Key": {
+              "$type": "Comindware.Platform.Contracts.ModificationActionModel, Comindware.Platform.Contracts",
+              "PropertyPath": {
+                "$type": "Comindware.Platform.Contracts.GlobalAlias[], Comindware.Platform.Contracts",
+                "$values": [
+                  {
+                    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                    "Type": "MessageTemplateProperty",
+                    "Owner": "_HttpRequest",
+                    "Alias": "url"
+                  }
+                ]
+              },
+              "PropertyAction": "Replace"
+            },
+            "Value": {
+              "$type": "Comindware.Platform.Contracts.CalculationRuleModel, Comindware.Platform.Contracts",
+              "Type": "Calculation",
+              "Definition": {
+                "$type": "Comindware.Platform.Contracts.ApplyTemplateRuleDefinitionModel, Comindware.Platform.Contracts",
+                "Template": "https://up.mipt.ru/up/ws/PersonsInformation.1cws",
+                "Type": "ApplyTemplate"
+              }
+            }
+          },
+          {
+            "$type": "Comindware.Platform.Contracts.PropertyMapKeyValueModel, Comindware.Platform.Contracts",
+            "Key": {
+              "$type": "Comindware.Platform.Contracts.ModificationActionModel, Comindware.Platform.Contracts",
+              "PropertyPath": {
+                "$type": "Comindware.Platform.Contracts.GlobalAlias[], Comindware.Platform.Contracts",
+                "$values": [
+                  {
+                    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                    "Type": "MessageTemplateProperty",
+                    "Owner": "_HttpRequest",
+                    "Alias": "header"
+                  }
+                ]
+              },
+              "PropertyAction": "Replace"
+            },
+            "Value": {
+              "$type": "Comindware.Platform.Contracts.MakeArrayRuleModel, Comindware.Platform.Contracts",
+              "Item": {
+                "$type": "Comindware.Platform.Contracts.CalculationRuleModel[], Comindware.Platform.Contracts",
+                "$values": [
+                  {
+                    "$type": "Comindware.Platform.Contracts.MakeMessageRuleModel, Comindware.Platform.Contracts",
+                    "MessageType": {
+                      "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                      "Type": "Undefined"
+                    },
+                    "PropertyMap": {
+                      "$type": "Comindware.Platform.Contracts.PropertyMapKeyValueModel[], Comindware.Platform.Contracts",
+                      "$values": [
+                        {
+                          "$type": "Comindware.Platform.Contracts.PropertyMapKeyValueModel, Comindware.Platform.Contracts",
+                          "Key": {
+                            "$type": "Comindware.Platform.Contracts.ModificationActionModel, Comindware.Platform.Contracts",
+                            "PropertyPath": {
+                              "$type": "Comindware.Platform.Contracts.GlobalAlias[], Comindware.Platform.Contracts",
+                              "$values": [
+                                {
+                                  "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                                  "Type": "MessageTemplateProperty",
+                                  "Owner": "_HttpHeader",
+                                  "Alias": "value"
+                                }
+                              ]
+                            },
+                            "PropertyAction": "Replace"
+                          },
+                          "Value": {
+                            "$type": "Comindware.Platform.Contracts.CalculationRuleModel, Comindware.Platform.Contracts",
+                            "Type": "Calculation",
+                            "Definition": {
+                              "$type": "Comindware.Platform.Contracts.ApplyTemplateRuleDefinitionModel, Comindware.Platform.Contracts",
+                              "Template": "text/xml;charset=\"utf-8\"",
+                              "Type": "ApplyTemplate"
+                            }
+                          }
+                        },
+                        {
+                          "$type": "Comindware.Platform.Contracts.PropertyMapKeyValueModel, Comindware.Platform.Contracts",
+                          "Key": {
+                            "$type": "Comindware.Platform.Contracts.ModificationActionModel, Comindware.Platform.Contracts",
+                            "PropertyPath": {
+                              "$type": "Comindware.Platform.Contracts.GlobalAlias[], Comindware.Platform.Contracts",
+                              "$values": [
+                                {
+                                  "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                                  "Type": "MessageTemplateProperty",
+                                  "Owner": "_HttpHeader",
+                                  "Alias": "key"
+                                }
+                              ]
+                            },
+                            "PropertyAction": "Replace"
+                          },
+                          "Value": {
+                            "$type": "Comindware.Platform.Contracts.CalculationRuleModel, Comindware.Platform.Contracts",
+                            "Type": "Calculation",
+                            "Definition": {
+                              "$type": "Comindware.Platform.Contracts.ApplyTemplateRuleDefinitionModel, Comindware.Platform.Contracts",
+                              "Template": "Content-Type",
+                              "Type": "ApplyTemplate"
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    "Type": "MakeMessage"
+                  },
+                  {
+                    "$type": "Comindware.Platform.Contracts.MakeMessageRuleModel, Comindware.Platform.Contracts",
+                    "MessageType": {
+                      "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                      "Type": "Undefined"
+                    },
+                    "PropertyMap": {
+                      "$type": "Comindware.Platform.Contracts.PropertyMapKeyValueModel[], Comindware.Platform.Contracts",
+                      "$values": [
+                        {
+                          "$type": "Comindware.Platform.Contracts.PropertyMapKeyValueModel, Comindware.Platform.Contracts",
+                          "Key": {
+                            "$type": "Comindware.Platform.Contracts.ModificationActionModel, Comindware.Platform.Contracts",
+                            "PropertyPath": {
+                              "$type": "Comindware.Platform.Contracts.GlobalAlias[], Comindware.Platform.Contracts",
+                              "$values": [
+                                {
+                                  "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                                  "Type": "MessageTemplateProperty",
+                                  "Owner": "_HttpHeader",
+                                  "Alias": "value"
+                                }
+                              ]
+                            },
+                            "PropertyAction": "Replace"
+                          },
+                          "Value": {
+                            "$type": "Comindware.Platform.Contracts.CalculationRuleModel, Comindware.Platform.Contracts",
+                            "Type": "Calculation",
+                            "Definition": {
+                              "$type": "Comindware.Platform.Contracts.ApplyTemplateRuleDefinitionModel, Comindware.Platform.Contracts",
+                              "Template": "MFTI.ru#PersonsInformation:GetIndividual",
+                              "Type": "ApplyTemplate"
+                            }
+                          }
+                        },
+                        {
+                          "$type": "Comindware.Platform.Contracts.PropertyMapKeyValueModel, Comindware.Platform.Contracts",
+                          "Key": {
+                            "$type": "Comindware.Platform.Contracts.ModificationActionModel, Comindware.Platform.Contracts",
+                            "PropertyPath": {
+                              "$type": "Comindware.Platform.Contracts.GlobalAlias[], Comindware.Platform.Contracts",
+                              "$values": [
+                                {
+                                  "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                                  "Type": "MessageTemplateProperty",
+                                  "Owner": "_HttpHeader",
+                                  "Alias": "key"
+                                }
+                              ]
+                            },
+                            "PropertyAction": "Replace"
+                          },
+                          "Value": {
+                            "$type": "Comindware.Platform.Contracts.CalculationRuleModel, Comindware.Platform.Contracts",
+                            "Type": "Calculation",
+                            "Definition": {
+                              "$type": "Comindware.Platform.Contracts.ApplyTemplateRuleDefinitionModel, Comindware.Platform.Contracts",
+                              "Template": "SOAPAction",
+                              "Type": "ApplyTemplate"
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    "Type": "MakeMessage"
+                  }
+                ]
+              },
+              "Type": "MakeArray"
+            }
+          },
+          {
+            "$type": "Comindware.Platform.Contracts.PropertyMapKeyValueModel, Comindware.Platform.Contracts",
+            "Key": {
+              "$type": "Comindware.Platform.Contracts.ModificationActionModel, Comindware.Platform.Contracts",
+              "PropertyPath": {
+                "$type": "Comindware.Platform.Contracts.GlobalAlias[], Comindware.Platform.Contracts",
+                "$values": [
+                  {
+                    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                    "Type": "MessageTemplateProperty",
+                    "Owner": "_HttpRequest",
+                    "Alias": "method"
+                  }
+                ]
+              },
+              "PropertyAction": "Replace"
+            },
+            "Value": {
+              "$type": "Comindware.Platform.Contracts.CalculationRuleModel, Comindware.Platform.Contracts",
+              "Type": "Calculation",
+              "Definition": {
+                "$type": "Comindware.Platform.Contracts.ValuesRuleDefinitionModel, Comindware.Platform.Contracts",
+                "Values": {
+                  "$type": "System.Object[], mscorlib",
+                  "$values": [
+                    "cmw.message.type.http.PostMethod"
+                  ]
+                },
+                "Type": "Values"
+              }
+            }
+          }
+        ]
+      },
+      "Type": "MakeMessage"
+    },
+    "ReturnMapping": {
+      "$type": "Comindware.Platform.Contracts.MakeMessageRuleModel, Comindware.Platform.Contracts",
+      "MessageType": {
+        "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+        "Type": "MessageTemplate",
+        "Alias": "Employee_output"
+      },
+      "ContextObject": "message",
+      "Type": "MakeMessage"
+    },
+    "Type": "ExternalService"
+  }
+}

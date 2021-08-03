@@ -1,0 +1,69 @@
+{
+  "$type": "Comindware.Platform.Contracts.FormModel, Comindware.Platform.Contracts",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Form",
+    "Owner": "Priemynarabotu",
+    "Alias": "form6007"
+  },
+  "Type": "PublicForm",
+  "IsDefault": false,
+  "Root": {
+    "$type": "Comindware.Platform.Contracts.VerticalLayoutModel, Comindware.Platform.Contracts",
+    "Rows": {
+      "$type": "System.Collections.Generic.List`1[[Comindware.Platform.Contracts.FormComponentModel, Comindware.Platform.Contracts]], mscorlib",
+      "$values": [
+        {
+          "$type": "Comindware.Platform.Contracts.StaticContentModel, Comindware.Platform.Contracts",
+          "Content": {
+            "$type": "Comindware.Platform.Contracts.LocalizedTextModel, Comindware.Platform.Contracts",
+            "En": "<p><strong><span style=\"font-size:20px;\">Вам необходимо подойти к сотруднику МФТИ, помогающему в Вашем трудоустройстве&nbsp;для подписания комплекта документов на приём.</span></strong></p> <p>&nbsp;</p> <p>С собой необходимо принести оригиналы следующих документов:</p> <ul> <li>общегражданский&nbsp;паспорт;</li> <li>документов об образовании;</li> <li>справку о прохождении медицинского осмотра;</li> <li>справки об отсутствии судимости;</li> <li>СНИЛС;</li> <li>при наличии трудового стажа - трудовой книжки или сведения о трудовой деятельности по форме СТД-ПФР.</li>\n</ul>\n",
+            "De": "<p><strong><span style=\"font-size:20px;\">Вам необходимо подойти к сотруднику МФТИ, помогающему в Вашем трудоустройстве&nbsp;для подписания комплекта документов на приём.</span></strong></p> <p>&nbsp;</p> <p>С собой необходимо принести оригиналы следующих документов:</p> <ul> <li>общегражданский&nbsp;паспорт;</li> <li>документов об образовании;</li> <li>справку о прохождении медицинского осмотра;</li> <li>справки об отсутствии судимости;</li> <li>СНИЛС;</li> <li>при наличии трудового стажа - трудовой книжки или сведения о трудовой деятельности по форме СТД-ПФР.</li>\n</ul>\n",
+            "Ru": "<p><strong><span style=\"font-size:20px;\">Вам необходимо подойти к сотруднику МФТИ, помогающему в Вашем трудоустройстве&nbsp;для подписания комплекта документов на приём.</span></strong></p> <p>&nbsp;</p> <p>С собой необходимо принести оригиналы следующих документов:</p> <ul> <li>общегражданский&nbsp;паспорт;</li> <li>документов об образовании;</li> <li>справку о прохождении медицинского осмотра;</li> <li>справки об отсутствии судимости;</li> <li>СНИЛС;</li> <li>при наличии трудового стажа - трудовой книжки или сведения о трудовой деятельности по форме СТД-ПФР.</li>\n</ul>\n"
+          },
+          "GlobalAlias": {
+            "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+            "Type": "FormComponent",
+            "Alias": "StaticContentComponent"
+          },
+          "AccessType": "Undefined",
+          "Width": 0,
+          "Type": "StaticContent"
+        },
+        {
+          "$type": "Comindware.Platform.Contracts.SubFormModel, Comindware.Platform.Contracts",
+          "Name": "Стартовая форма",
+          "DataSourcePropertyPath": {
+            "$type": "Comindware.Platform.Contracts.GlobalAlias[], Comindware.Platform.Contracts",
+            "$values": [
+              {
+                "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                "Type": "Form",
+                "Owner": "Priemynarabotu",
+                "Alias": "form37911"
+              }
+            ]
+          },
+          "GlobalAlias": {
+            "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+            "Type": "FormComponent",
+            "Alias": "form37911"
+          },
+          "AccessType": "Readonly",
+          "Width": 0,
+          "Type": "SubForm"
+        }
+      ]
+    },
+    "GlobalAlias": {
+      "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+      "Type": "FormComponent",
+      "Alias": "root"
+    },
+    "AccessType": "Undefined",
+    "Width": 0,
+    "Type": "VerticalLayout"
+  },
+  "Name": "Форма-уведомление о подписании документов",
+  "Origination": "Undefined"
+}

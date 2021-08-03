@@ -1,0 +1,36 @@
+{
+  "$type": "Comindware.Platform.Contracts.AttributeModel, Comindware.Platform.Contracts",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Attribute",
+    "Owner": "Kandidaty",
+    "Alias": "SkanINN"
+  },
+  "Type": "Document",
+  "Format": "Attachment",
+  "Name": "Скан ИНН",
+  "IsSystem": false,
+  "IsDisabled": false,
+  "IsUnique": false,
+  "IsIndexed": false,
+  "IsTracked": true,
+  "IsMultiValue": true,
+  "IsTitle": false,
+  "IsMandatory": false,
+  "IsOwnership": false,
+  "IsCalculated": false,
+  "FileFormat": {
+    "$type": "Comindware.Platform.Contracts.ObjectPropertyFileFormat[], Comindware.Platform.Contracts",
+    "$values": [
+      "Jpeg",
+      "Pdf",
+      "Png"
+    ]
+  },
+  "InstanceGlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Undefined"
+  },
+  "ImageColorType": "Original",
+  "ImagePreserveAspectRatio": false
+}

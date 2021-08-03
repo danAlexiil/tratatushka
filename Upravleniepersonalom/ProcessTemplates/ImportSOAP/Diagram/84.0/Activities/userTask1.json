@@ -1,0 +1,58 @@
+{
+  "$type": "Comindware.Platform.Contracts.TaskActivityModel, Comindware.Platform.Contracts",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Activity",
+    "Owner": "ImportSOAP",
+    "Alias": "userTask1"
+  },
+  "Kind": "Script",
+  "ScriptDefinition": {
+    "$type": "Comindware.Platform.Contracts.ScriptTaskDefinitionModel, Comindware.Platform.Contracts",
+    "MaxExecutionTime": "03:00:00",
+    "AttemptCount": 1,
+    "AttemptInterval": "00:00:00",
+    "Script": {
+      "$type": "Comindware.Platform.Contracts.CustomRuleModel, Comindware.Platform.Contracts",
+      "Type": "Custom",
+      "Definition": {
+        "$type": "Comindware.Platform.Contracts.CSharpRuleDefinitionModel, Comindware.Platform.Contracts",
+        "Code": "using System; \nusing System.Collections.Generic;\nusing System.IO;\nusing System.Linq;\nusing System.Net;\nusing System.Net.NetworkInformation;\nusing System.Text;\nusing System.Xml;\nusing System.Xml.Linq;\nusing System.Xml.Serialization;\n\nusing Comindware.Data.Entity;\nusing Comindware.TeamNetwork.Api.Data.UserCommands;\nusing Comindware.TeamNetwork.Api.Data;\n\n\npublic class Script\n{\n\tprivate const string COMMAND_PATTERN = @\"<?xml version=\"\"1.0\"\" encoding=\"\"utf-8\"\"?>\n    <soapenv:Envelope xmlns:soapenv=\"\"http://schemas.xmlsoap.org/soap/envelope/\"\" xmlns:mfti=\"\"http://MFTI.ru\"\">\n   <soapenv:Header/>\n   <soapenv:Body>\n      <mfti:GetFLS>\n         <mfti:financialAccountIdList></mfti:financialAccountIdList>\n         <mfti:departmentIdList></mfti:departmentIdList>\n         <mfti:HeadEmployeeId></mfti:HeadEmployeeId>\n         <mfti:ResponsiblePersonEmployeeID></mfti:ResponsiblePersonEmployeeID>\n      </mfti:GetFLS>\n   </soapenv:Body>\n</soapenv:Envelope>\";\n\n    private const string SOLUTION_NAME = \"Upravleniepersonalom\";\n\n    private const string SOAP_CONFIG_VAR = \"SOAP_CONFIG\";\n\n\tprivate const string SOAP_SERVICE = \"FLS\";\n\t        \n\tpublic static void Main(Comindware.Process.Api.Data.ScriptContext context, Comindware.Entities entities)\n\t{\n\t\tSoapConfig cfg = null;\n\t\tComindware.ImportSoapData inst = entities.ImportSoapData.First(item=>item.id== context.BusinessObjectId);\n        inst.DateTime = DateTime.Now;  \n        inst.ProcessId = context.ProcessId;\n\t\tinst.ServiceName = SOAP_SERVICE;\n        try\n        {\n\t\t\tstring soap_config_file = Api.Solution.SolutionVariableService.GetValue(SOLUTION_NAME, SOAP_CONFIG_VAR).ToString();\n            cfg = LoadConfig(soap_config_file, SOAP_SERVICE);\n        \tvar doc = CallWebService (cfg, COMMAND_PATTERN);\n\t\t\tvar items = Parse(doc, cfg.XmlNamespace);\n\t\t\tif (items == null)\n\t\t\t{\n\t\t\t\tinst.Success = false;\n\t\t\t\tinst.ErrorCode = \"FLS_0004\";\n\t\t\t\tstring message = \"XML does not contain <return> element\";\n\t\t\t\tif (cfg != null)\n\t\t\t\t\tmessage = cfg.ToString() + \"...\" + message;\n\t\t\t\tinst.ErrorMessage = message;\n\t\t\t}\n\t\t\telse\n\t\t\t{\n\t\t\t\tinst.RecordAmount = items.Count();\n\t\t\t\tUpdate(cfg.ComindwareEntity, items);\n\t\t\t\tinst.ErrorMessage = \"Success\";\n\t\t\t\tinst.Success = true;\n\t\t\t}\n        }\n\t\tcatch (Exception exc)\n        {\n\t\t\tinst.Success = false;\n\t\t\tinst.ErrorCode = \"FLS_0003\";\n            string message = exc.ToString();\n            IPAddress[] localIPs = Dns.GetHostAddresses(Dns.GetHostName());\n            foreach (var ipAddress in localIPs)\n            {\n                message += $\"    {ipAddress}\";\n            }\n            string value = string.Empty;\n            foreach (NetworkInterface nic in NetworkInterface.GetAllNetworkInterfaces())\n            {\n                message += nic.Name;\n            }\n            \n\t\t\tif (cfg != null)\n\t\t\t\tmessage = cfg.ToString() + \"...\" + message;\n\t\t\tinst.ErrorMessage += message;\n        }\n\t\tentities.ImportSoapData.Edit(inst);\n\t}\n\t\n\tprivate static List<FinancialAccount> Parse(XDocument doc, string xmlNamespace)\n\t{\n        XNamespace ns = xmlNamespace;\n\t\tvar mReturn = doc.Descendants(ns + \"return\");\n\t\tvar element = mReturn.FirstOrDefault();\n\t\tif (element == null)\n\t\t\treturn null;\n\t\tvar flsJson = JsonConvert.DeserializeObject<List<FinancialAccount>>(element.Value);\n\t\treturn flsJson;\n\t}\n\t\n\tprivate static void Update(string entity, List<FinancialAccount> flsList)\n\t{\n\t\tforeach(var fls in flsList)\n\t\t{\n            var searchDictionary = new Dictionary<string,object>{{\"Id1c\", fls.Id}};\n            IDictionary<string, object> recordData;\n            try{\n\t\t\t recordData = Api.TeamNetwork.ObjectService.Get (entity, searchDictionary, new List<string> {\"id\"});\n            }\n            catch(Exception exc)\n            {\n                string message = String.Format(\"entity: {0}, {1}\", fls.Number, fls.Id);\n                throw new Exception(message, exc);\n            }\n\t\t\tvar record = new Dictionary<string, object>();\n\t\t\tFillRecord(record, fls);\n\t\t\tif (recordData == null || recordData.Count() == 0)\n\t\t\t{\t\n                Api.TeamNetwork.ObjectService.CreateWithAlias (entity, record);\n\t\t\t}\n\t\t\telse\n\t\t\t{\n                var recordId = recordData[\"id\"].ToString();\n\t\t\t\tApi.TeamNetwork.ObjectService.EditWithAlias(entity, recordId, record);\n\t\t\t}\n\t\t}\n\t}\n\t\n\tprivate static void FillRecord(Dictionary<string, object> dict, FinancialAccount fls)\n\t{\n\t\tdict[\"Id1c\"] = fls.Id;\n\t\tdict[\"Kod\"] = fls.Number;\n\t\tdict[\"Nazvanie\"] = String.Format(\"{0}:{1}\", fls.DepartmentId, fls.DepartmentName);\n        dict[\"DepartmentId\"] = fls.DepartmentId;\n        dict[\"DepartmentName\"] = fls.DepartmentName;\n\t\tSetDate(dict, \"Srok\", fls.ToDate);\n\t}\t\n\n\tprivate static void SetDate(Dictionary<string, object> dict, string key, string sourceValue)\n\t{\n\t\tDateTime date;\n\t\tif (DateTime.TryParseExact(sourceValue, \"yyyy-MM-ddTHH:mm:ss\", null, System.Globalization.DateTimeStyles.None, out date))\n\t\t{\n\t\t\tdict[key] = date;\n\t\t}\n\t}\n\t\n\tprivate static XDocument CallWebService(SoapConfig cfg, string command)\n\t{\n        if (ServicePointManager.SecurityProtocol.HasFlag(SecurityProtocolType.Tls12) == false)\n        {\n            ServicePointManager.SecurityProtocol = ServicePointManager.SecurityProtocol | SecurityProtocolType.Tls12;\n        }\n\t\tHttpWebRequest webRequest = CreateWebRequest(cfg, command);\n\t\treturn LoadResult(webRequest);\n\t}\n    \n\tprivate static XDocument LoadResult(HttpWebRequest webRequest)\n\t{\n\t\tXDocument doc;\n        using (WebResponse webResponse = webRequest.GetResponse())\n        {\n            string soapResult;\n\t\t\tusing (StreamReader rd = new StreamReader(webResponse.GetResponseStream()))\n\t\t\t{\n\t\t\t\tsoapResult = rd.ReadToEnd();\n\t\t\t}\n\t\t\tdoc = XDocument.Parse(soapResult);\t\t\t      \n        }\n\t\treturn doc;\n\t}\n\t\n\tprivate static HttpWebRequest CreateWebRequest(SoapConfig cfg, string command)\n\t{\t\n\t\tHttpWebRequest webRequest = (HttpWebRequest)WebRequest.Create(cfg.SoapUrl);\n\t\twebRequest.Headers.Add(\"SOAPAction\", cfg.SoapAction);\n\t\twebRequest.Credentials = new NetworkCredential(cfg.Login, cfg.Password);\n\t\twebRequest.ContentType = \"text/xml;charset=\\\"utf-8\\\"\";\n\t\twebRequest.Accept = \"text/xml\";\n\t\twebRequest.Method = \"POST\";\n        if (!string.IsNullOrEmpty(cfg.SourceIpAddress))\n        {\n            webRequest.Proxy = null;\n       \t\twebRequest.ServicePoint.BindIPEndPointDelegate = delegate(ServicePoint servicePoint, IPEndPoint remoteEndPoint, int retryCount)\n\t\t\t{\n        \t\treturn new IPEndPoint(IPAddress.Parse(cfg.SourceIpAddress), 0);;\n        \t};\n        }\n\t\t\n\t\tEncoding enc = Encoding.UTF8;\n        byte[] bytes = enc.GetBytes(command);\n\t\twebRequest.ContentLength = bytes.Length;\n        using(Stream stream = webRequest.GetRequestStream())\n        {\n            stream.Write(bytes, 0, bytes.Length);\n        }\n\t\treturn webRequest;\n\t}\n    \n    private static SoapConfig LoadConfig(string link, string serviceName)\n    {\n        XmlSerializer formatter = new XmlSerializer(typeof(SoapConfig[]));\n        SoapConfig[] cfg;\n        using (FileStream fs = new FileStream(link, FileMode.Open))\n        {\n             cfg = (SoapConfig[])formatter.Deserialize(fs);\n        }\n        return cfg.FirstOrDefault(item => item.Name == serviceName);\n    }\n\t\n    [Serializable]\n\tpublic class SoapConfig\n\t{\n        [XmlAttribute]\n\t\tpublic string Name { get; set; }\n        [XmlAttribute]\n        public string SoapUrl { get; set; }\n\t\t[XmlAttribute]\n        public string SoapAction { get; set; }\n        [XmlElement]\n\t\tpublic string Login { get; set; }\n        [XmlElement]\n\t\tpublic string Password { get; set; }\n        [XmlAttribute]\n\t\tpublic string XmlNamespace { get; set; }\n        [XmlAttribute]\n\t\tpublic string ComindwareEntity { get; set; }\t\n        [XmlAttribute]\n        public string SourceIpAddress { get; set; }\n\t\t\n\t\tpublic override string ToString()\n\t\t{\n\t\t\tStringBuilder sb = new StringBuilder();\n\t\t\tsb.AppendLine(string.Format(\"{0}.{1}\", \"Name\", Name));\n\t\t\tsb.AppendLine(string.Format(\"{0}.{1}\", \"SoapUrl\", SoapUrl));\n\t\t\tsb.AppendLine(string.Format(\"{0}.{1}\", \"SoapAction\", SoapAction));\n\t\t\tsb.AppendLine(string.Format(\"{0}.{1}\", \"XmlNamespace\", XmlNamespace));\n\t\t\tsb.AppendLine(string.Format(\"{0}.{1}\", \"ComindwareEntity\", ComindwareEntity));\n            sb.AppendLine(string.Format(\"{0}.{1}\", \"SourceIpAddress\", SourceIpAddress));\n\t\t\treturn sb.ToString();\n\t\t}\n\t}\n\t\n\tpublic class FinancialAccount\n\t{\n\t\tpublic string Id { get; set; }\n\t\tpublic string Number { get; set; }\n\t\tpublic string DepartmentId { get; set; }\n\t\tpublic string DepartmentName { get; set; }\n\t\tpublic string HeadEmployee { get; set; }\n\t\tpublic string HeadHRId { get; set; }\n\t\tpublic string ResponsiblePersonEmployee { get; set; }\n\t\tpublic string ResponsiblePersonHRId { get; set; }\n\t\tpublic string FromDate { get; set; }\n\t\tpublic string ToDate { get; set; }\n\t\tpublic string CreationDate { get; set; }\n\t\tpublic string HeadId { get; set; }\n\t\tpublic string ResponsiblePersonId { get; set; }\n\t}\n}",
+        "Type": "CSharpExpression"
+      }
+    }
+  },
+  "FormAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "ProcessForm",
+    "Owner": "ImportSOAP"
+  },
+  "BehaviourState": "Undefined",
+  "Title": "Импорт ФЛС",
+  "IsTitleSet": false,
+  "Position": {
+    "$type": "Comindware.Platform.Contracts.VectorModel, Comindware.Platform.Contracts",
+    "X": 360.0,
+    "Y": 165.0
+  },
+  "Size": {
+    "$type": "Comindware.Platform.Contracts.DimensionsModel, Comindware.Platform.Contracts",
+    "Width": 120.0,
+    "Height": 70.0
+  },
+  "Owner": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Activity",
+    "Owner": "ImportSOAP",
+    "Alias": "pool1"
+  },
+  "OwnerEmbeddedProcessActivityAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Undefined"
+  },
+  "MountedOnAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Undefined"
+  },
+  "Type": "Task"
+}

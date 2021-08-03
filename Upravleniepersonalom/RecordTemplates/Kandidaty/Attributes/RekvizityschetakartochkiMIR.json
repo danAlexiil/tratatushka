@@ -1,0 +1,38 @@
+{
+  "$type": "Comindware.Platform.Contracts.AttributeModel, Comindware.Platform.Contracts",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Attribute",
+    "Owner": "Kandidaty",
+    "Alias": "RekvizityschetakartochkiMIR"
+  },
+  "Type": "Document",
+  "Format": "Attachment",
+  "Name": "Реквизиты счета карточки МИР",
+  "IsSystem": false,
+  "IsDisabled": false,
+  "IsUnique": false,
+  "IsIndexed": false,
+  "IsTracked": false,
+  "IsMultiValue": true,
+  "IsTitle": false,
+  "IsMandatory": false,
+  "IsOwnership": false,
+  "IsCalculated": false,
+  "FileFormat": {
+    "$type": "Comindware.Platform.Contracts.ObjectPropertyFileFormat[], Comindware.Platform.Contracts",
+    "$values": [
+      "Docx",
+      "Jpeg",
+      "Xlsx",
+      "Pdf",
+      "Png"
+    ]
+  },
+  "InstanceGlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Undefined"
+  },
+  "ImageColorType": "Original",
+  "ImagePreserveAspectRatio": false
+}

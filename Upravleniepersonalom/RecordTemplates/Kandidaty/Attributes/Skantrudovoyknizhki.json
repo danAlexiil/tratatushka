@@ -1,0 +1,36 @@
+{
+  "$type": "Comindware.Platform.Contracts.AttributeModel, Comindware.Platform.Contracts",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Attribute",
+    "Owner": "Kandidaty",
+    "Alias": "Skantrudovoyknizhki"
+  },
+  "Type": "Document",
+  "Format": "Attachment",
+  "Name": "Скан трудовой книжки",
+  "IsSystem": false,
+  "IsDisabled": false,
+  "IsUnique": false,
+  "IsIndexed": false,
+  "IsTracked": false,
+  "IsMultiValue": true,
+  "IsTitle": false,
+  "IsMandatory": false,
+  "IsOwnership": false,
+  "IsCalculated": false,
+  "FileFormat": {
+    "$type": "Comindware.Platform.Contracts.ObjectPropertyFileFormat[], Comindware.Platform.Contracts",
+    "$values": [
+      "Jpeg",
+      "Pdf",
+      "Png"
+    ]
+  },
+  "InstanceGlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Undefined"
+  },
+  "ImageColorType": "Original",
+  "ImagePreserveAspectRatio": false
+}

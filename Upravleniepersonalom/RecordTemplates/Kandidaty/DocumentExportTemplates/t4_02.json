@@ -1,0 +1,23 @@
+{
+  "$type": "Comindware.Platform.Contracts.DocumentExportTemplateModel, Comindware.Platform.Contracts",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "ExportTemplate",
+    "Owner": "Kandidaty",
+    "Alias": "t4_02"
+  },
+  "Name": "t4_02",
+  "ExportSourceTemplate": {
+    "$type": "Comindware.Platform.Contracts.ExportSourceTemplateFromDocument, Comindware.Platform.Contracts",
+    "Type": "Document",
+    "FileName": "ШАБЛОН Учетной карточки научного, научно-педагогического сотрудника Т4.docx",
+    "FileType": "Word",
+    "StreamId": "cmw.xmlns:.stream:///.a575597d-5ef2-4a0e-8d55-df21158da61c"
+  },
+  "OutputFileNameTemplate": {
+    "$type": "Comindware.Platform.Contracts.OutputFileNameTemplateFromValue, Comindware.Platform.Contracts",
+    "Type": "Value",
+    "Value": "Учетная карточка научного, научно-педагогического работника Т4"
+  },
+  "ExportAsPdf": false
+}
